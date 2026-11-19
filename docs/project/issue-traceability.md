@@ -7,7 +7,7 @@
 | Baseline commit | `4eb2c466c58c1e2a55d938fc925fb31ea442edcd` |
 | Jumlah issue | 24 |
 | Milestone | M0–M5 |
-| Status | Implementasi berjalan; M0 dan M1-01–M1-06 selesai |
+| Status | Implementasi berjalan; M0 dan M1-01–M1-07 selesai |
 
 ## 1. Peta issue
 
@@ -20,7 +20,7 @@
 | M1-04 | [#5](https://github.com/rafi-muhammad/resep-ibu/issues/5) | Display, dialog, navigation primitives | M1 | #3 | **CLOSED** |
 | M1-05 | [#6](https://github.com/rafi-muhammad/resep-ibu/issues/6) | Routing, layout, shell, error boundary | M1 | #3, #4, #5 | **CLOSED** |
 | M1-06 | [#7](https://github.com/rafi-muhammad/resep-ibu/issues/7) | Domain types, mock repository, fixtures | M1 | #2 | **CLOSED** |
-| M1-07 | [#8](https://github.com/rafi-muhammad/resep-ibu/issues/8) | Demo auth provider dan protected routes | M1 | #6, #7 | OPEN |
+| M1-07 | [#8](https://github.com/rafi-muhammad/resep-ibu/issues/8) | Demo auth provider dan protected routes | M1 | #6, #7 | **CLOSED** |
 | M1-08 | [#9](https://github.com/rafi-muhammad/resep-ibu/issues/9) | Optimasi aset WebP dan mapping | M1 | #1 | OPEN |
 | M2-01 | [#10](https://github.com/rafi-muhammad/resep-ibu/issues/10) | Daftar resep, search, filter, pagination, populer | M2 | #5, #6, #7, #9 | OPEN |
 | M2-02 | [#11](https://github.com/rafi-muhammad/resep-ibu/issues/11) | Beranda | M2 | #8, #10 | OPEN |
@@ -78,7 +78,7 @@
 | Milestone | Nomor | Jumlah issue | Status |
 | --- | --- | --- | --- |
 | M0 — Baseline | 1 | 1 | Selesai |
-| M1 — Foundation | 2 | 8 | Berjalan (6/8) |
+| M1 — Foundation | 2 | 8 | Berjalan (7/8) |
 | M2 — Public Experience | 3 | 5 | Belum dimulai |
 | M3 — Account & Contribution | 4 | 4 | Belum dimulai |
 | M4 — Admin | 5 | 3 | Belum dimulai |
@@ -116,6 +116,7 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | `80ab3b1` | M1-04: perbaikan grup font-size kustom di `cn()` (#5) |
 | `d4e18be` | M1-05: router, layout publik, auth, akun, admin shell, error boundary + 10 test (#6) |
 | `1ccf83e` | M1-06: domain types, 7 repository, adapter mock localStorage, fixtures + 40 test (#7) |
+| `aa6cf34` | M1-07: auth provider, sesi demo, guard profil/admin, returnTo aman + 24 test auth dan 3 test router (#8) |
 
 ## 6. Verifikasi
 
@@ -134,11 +135,14 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | Issue #5 | CLOSED, alasan completed |
 | Issue #6 | CLOSED, alasan completed |
 | Issue #7 | CLOSED, alasan completed |
-| Commit implementasi terakhir | `1ccf83e` |
-| Test data layer (#7) | 40 passed, 12 file / 116 test total |
+| Issue #8 | CLOSED, alasan completed |
+| Commit implementasi terakhir | `aa6cf34` |
+| Test data layer (#7) | 40 passed |
+| Test auth dan guard (#8) | 24 passed + 3 test router |
+| Total test | 143 passed (15 file) |
 | Fixture demo (#7) | 24 resep, 7 kategori, 4 pengguna, 6 pesan, 3 tim |
-| Fixture diimpor komponen | 0 (hanya `src/lib/api` dan `src/mocks`)|
-| File terlacak | 268 |
+| Fixture diimpor komponen | 0 (hanya `src/lib/api` dan `src/mocks`) |
+| File terlacak | 281 |
 | File terlarang di Git | 0 |
 | Fingerprint legacy | `e054d179...977212` (identik) |
 
