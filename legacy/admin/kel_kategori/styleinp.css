@@ -1,0 +1,96 @@
+*{
+    font-family: 'Nunito';
+}
+
+body{
+    background-color:#583217;
+    margin: 0px 0 150px 0;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #583217;
+}
+.logo {
+    width: 140px;
+}
+.nav-links {
+    font-size: 18px;
+    padding: 20px 0;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 0;
+}
+
+.container {
+    position: relative;
+    padding: 40px 40px 32px 40px;
+    background: #ffffff;
+    max-width: 700px;
+    margin: auto;
+    justify-content: flex-start;
+    border-radius: 12px;
+}
+
+input[type="text"]{
+    align-items: center;
+    display: flex;
+    width: 650px;
+    border: 2px solid #dedede;
+    border-radius: 12px;
+    margin: 8px 0;
+    padding: 16px 12px;
+}
+
+input[type="submit"]{
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    align-items: center;
+    background: #DE876B;
+    width: 700px;
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 16px 12px;
+    border: none;
+}
+
+input[type="sumbit"]:hover {
+    background-color: rgb(187, 111, 86);
+}
+
+.head-judul{
+    padding: 32px;
+    align-items: center;
+}
+.head-judul h1 {
+    font-family: nunito;
+    font-size: 40px;
+    margin: 0;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+}
+.head-judul p {
+    font-family: nunito;
+    font-size: 24px;
+    margin: 6px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}

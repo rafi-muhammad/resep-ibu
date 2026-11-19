@@ -1,0 +1,85 @@
+* {
+    font-family: 'Nunito';
+}
+
+body {
+    margin: 0;
+    background-color: #FFF7E5;
+}
+nav {
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF7E5;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px;
+    color: #583217;
+}
+.logo {
+    width: 140px;
+}
+.nav-links {
+    font-size: 18px;
+    padding: 10px 0;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+.CTA li{
+    display: inline-block;
+    margin: 0 8px;
+    justify-content: right;
+}
+
+table {
+    margin: 30px; 
+    border-collapse:collapse;
+    border: 1px solid #999;  
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    width: 1380px;
+    caption-side: top;
+    padding: 0 100px 0 100px;
+}
+
+caption, table th {
+    align-items: center;
+    font-weight:bold;
+    padding:10px;
+    color:#FFF7E5;
+    background-color:#583217;
+    border-top:1px black solid;
+    border-bottom:1px black solid;
+}
+
+caption, table td {
+    align-content: space-between;
+    padding:10px;
+    border-top:1px black solid;
+    border-bottom:1px black solid;
+    text-align:center; 
+}   
+
+caption {
+    font-weight: bold;
+    font-style: italic;
+}
+
+table .left {
+    align-content: space-between;
+    text-align: left;
+    padding: 7px;
+}

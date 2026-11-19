@@ -1,0 +1,269 @@
+*{font-family: "Nunito", sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+
+/* Navigation */
+
+nav {
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px;
+    color: #583217;
+}
+.logo {
+    width: 140px;
+}
+.nav-links {
+    padding: 8px 0;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+/* CSS tambahan buat profil muncul di header */
+
+.nav-profil-email{
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-profil-name{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+}
+
+.nav-profil-detail{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav-profil-photo{
+    width: 50px;
+    height: 50px;
+    border-radius: 90px;
+}
+
+.nav-profil{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+/* Navigation Close */
+
+/* Page Homepage */
+
+    /* firstContent */
+    .firstContent{
+        background-color: #FFF7E5;
+        width: 100%;
+        height: 550px;
+    }
+    .firstContent-search{
+        background-color: #583217;
+        width: 100%;
+        height: 550px;
+    }
+    
+    .firstContent-title{
+        /* border: #000 1px solid; */
+        display: flex;
+        justify-content: center;
+    }
+    
+    .firstContent-title h1{
+        font-size: 40px;
+        width: 700px;
+        text-align: center;
+    }
+    
+    
+    .firstContent-text{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .firstContent-text p{
+        font-size: 22px;
+        width: 650px;
+        text-align: center;
+        color: #583217;
+    }
+
+    .judul{
+        display: flex;
+        justify-content: center;
+    }
+
+    .judul p{
+        font-size: 30px;
+        width: 650px;
+        text-align: center;
+        color: #583217;
+    }
+    
+    /* Serach bar */
+    .search-container {
+        display: flex;
+        justify-content: center;
+    }
+            
+    .search-input {
+        width: 450px;
+        height: 50px;
+        border-radius: 10px;
+        border: 2px solid rgba(88, 50, 23, 0.29);
+        padding: 0px 24px;
+                
+        transition: transform 250ms ease-in-out;
+        font-size: 18px;
+        line-height: 18px;
+                
+        color: #575756;
+        background-color: white;
+    }
+    
+        /* firstContent close */
+
+        /* Second Content */
+
+.upload-resep{
+    /* display: flex; */
+    margin-left: 60px;
+}
+.upload-resep h3{
+    font-size: 30px;
+    width: 650px;
+    color: #583217;
+}
+.upload-resep p{
+    font-size: 18px;
+    width: 650px;
+    color: #583217;
+    position: relative;
+    margin-top: -50px;
+}
+.card{
+    display: flex;
+}
+input[type="file"]{
+    display: none;
+}
+label{
+    color: white;
+    height: 400px;
+    width: 400px;
+    background-color: #D9D9D9;
+    padding: 10px;
+    margin: 40px;
+}
+
+.material-icons{ 
+    font-size: 300px; 
+    margin-left: 60px;
+    margin-top: 30px;   
+}
+.tentang textarea{
+    width: 1400px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid rgba(88, 50, 23, 0.29);
+    padding: 0px 24px;
+            
+    transition: transform 250ms ease-in-out;
+    font-size: 18px;
+    line-height: 18px;
+            
+    color: #575756;
+    background-color: white;
+}
+.form-button{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.upload{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: #DE876B;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* --- LIST RESEP --- */
+body h1{
+    font-size: 40px;
+    text-align: center;
+    margin: 15px;
+}
+
+.search__container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.search__container  button{
+    padding: 15px;
+    border-radius: 15px;
+    background-color:  #DE876B;
+    color: white;
+    border: 0px;
+}
+
+.search__input {
+    width: 500px;
+    border-radius: 90px;
+    padding: 12px 24px;
+    
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    
+    color: #575756;
+    background-color: white;
+}
+table td{
+    color: rgb(60, 60, 60);
+}
+
+table td a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #de3838;
+}
+
+table td img{
+    border-radius: 15px;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+

@@ -1,0 +1,185 @@
+* {
+    font-family: 'Nunito';
+}
+nav {
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF7E5;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px;
+    color: #583217;
+}
+.logo {
+    width: 140px;
+}
+.nav-links {
+    font-size: 18px;
+    padding: 20px 0;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+.daftar {
+    background: #FFF7E5;
+    border: 2px solid #D1CBBC;
+    color: #7A776E;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.daftar a{
+    text-decoration: none;
+    color: black;
+}
+.masuk{
+    background: rgb(222, 135, 107);
+    color: floralwhite;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.masuk a{
+    text-decoration: none;
+    color: white;
+}
+.CTA li{
+    display: inline-block;
+    margin: 0 8px;
+    justify-content: right;
+}
+
+.container {
+    text-align: left;
+    display: flex;
+    position: static;
+    background: #FFF7E5;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    padding: 0 0 100px 0;
+}
+
+.p-konten{
+    font-size: 28px;
+    padding: 0 150px 32px 0;
+}
+
+.head-konten {
+    text-align: left;
+    font-size: 40px;
+    font-weight: 800;
+}
+.konten {
+    text-align: left;
+    align-items: center;
+}
+
+.gambar {
+    width: 400px;
+    height: 200px;
+    padding: 32px 50px 0 70px;
+}
+.head-pro {
+    color: #FFF7E5;
+    margin: auto;
+    font-size: 40px;
+    font-weight: 800;
+}
+.profile-ang {
+    padding: 72px 0 64px 0;
+    position: static;
+    background: #583217;
+    width: 100%;
+    height: 530px;
+}
+.head-lok {
+    color: black;
+}
+.lokasi {
+    padding: 64px 0 64px 0;
+
+}
+.p-lok {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 150px;
+}
+.card {
+    align-items: center;
+    padding: 40px;
+    width: auto;
+    border-radius: 16px;
+  }
+.head-tim {
+    font-size: 26px;
+    color: blanchedalmond;
+    text-align: center;
+    margin: 24px 0 0 16px;
+}
+.p-nim{
+    font-size: 20px;
+    color: blanchedalmond;
+    text-align: center;
+    margin: 0;
+}
+
+footer {
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    background: #FFF7E5;
+}
+.linkfot{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background: #FFF7E5;
+    padding: 0 100px;
+}
+
+.linkfot li{
+    display: flex;
+    margin: 24px;
+    text-align: center;
+    display: inline-block;
+}
+
+.linkfot li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+.bottom {
+    background: #FBE8D5;
+    padding: 24px;
+}
+
+.bottom h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    color: #583217;
+    font-weight: 500;
+}

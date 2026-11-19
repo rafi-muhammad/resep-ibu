@@ -1,0 +1,82 @@
+body {
+    padding: 20px;
+}
+
+body h1{
+    font-size: 40px;
+    text-align: center;
+    margin: 15px;
+}
+
+.search__container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.search__container  button{
+    padding: 15px;
+    border-radius: 15px;
+    background-color:  #DE876B;
+    color: white;
+    border: 0px;
+}
+
+.search__input {
+    width: 500px;
+    border-radius: 90px;
+    padding: 12px 24px;
+    
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    
+    color: #575756;
+    background-color: white;
+}
+
+table td{
+    color: rgb(60, 60, 60);
+}
+
+table td a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #de3838;
+}
+
+table td img{
+    border-radius: 15px;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+
+.delete{
+    color: red;
+    padding: 5px;
+}
+.delete a{
+    text-decoration: none;
+}
+.edit{
+    color: green;
+    padding: 5px;
+}
+.edit a{
+    text-decoration: none;
+}
+.logout a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #3490f3;
+    
+}
+

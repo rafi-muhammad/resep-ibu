@@ -1,0 +1,320 @@
+/* Navigation Bar - Header */
+
+body{
+    background: #FFF7E5;
+}
+
+
+nav {
+    margin-top: 20px;
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px;
+    color: #583217;
+}
+.logo {
+    width: 140px;
+}
+.nav-links {
+    padding: 8px 0;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+.daftar {
+    font-family: nunito;
+    border: 2px solid #D1CBBC;
+    color: #7A776E;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.masuk{
+    background: rgb(222, 135, 107);
+    color: floralwhite;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.CTA li{
+    display: inline-block;
+    margin: 0 8px;
+    justify-content: right;
+}
+
+/* Navigation Bar - Header Close */
+
+
+
+
+
+/* Profil */
+
+.conteiner-profil{
+    display: flex;
+    justify-content: space-around;
+    /* border: #000000 1px solid; */
+    align-items: flex-start;
+
+}
+
+
+    /* Kotak Kiri */
+        .kotak-kiri{
+            background-color: white;
+            width: 413px;
+
+            /* margin: 40px; */
+            border-radius: 15px;
+            border: 1px solid #C4BCAC;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .profil{
+            /* border: 1px #583217 solid; */
+            display: flex;
+            flex-direction: row;
+            padding: 15px;
+            margin: 10px;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .profil img{
+            border-radius: 90px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .profil-teks a{
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            color: black;
+        }
+
+
+        /* ----------------------------------------------------- */
+
+
+        .profil-list{
+            /* border: 1px #583217 solid; */
+            /* padding: 10px; */
+            display: flex;
+            /* justify-content: center; */
+            flex-direction: column;
+            /* margin: 1rem;  */
+            
+            /* background-color: #eeee; */
+        }
+        
+        .profil-list a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .profil-data{
+            padding: 1.5rem;
+            display: flex;
+            /* height: 50px; */
+            flex-direction: row;
+            align-items: center;
+            /* border: #000 1px solid; */
+            gap: 1rem;
+            /* background-color: #eee; */
+        }
+        
+        .profil-password{
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .profil-logout{
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+
+    
+
+
+    /* Kotak Kanan */
+        .kotak-kanan{
+            border: 1px solid #C4BCAC;
+            /* margin: 40px; */
+            background-color: white;
+            border-radius: 15px;
+            padding: 0px 20px;
+        }
+        
+        .kotak-kanan h3{
+            padding: 10px;
+        }
+        
+        .kotak-kanan hr{
+            color: #C3BCAC;
+        }
+        
+        .input-profil button{
+            margin: 20px;
+            width: 75px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid #C4BCAC;
+            
+        }
+
+        
+        /* ----------------------------------------------------- */
+        
+        .input-photo-profil{
+            display: flex;
+            flex-direction: row;
+            /* justify-content: center; */
+            align-items: center;
+            padding: 0px 15px;
+            gap: 15px;
+        }
+        .input-photo-profil img{
+            border-radius: 0px;
+        }
+
+        .input-profil-content label{
+            display: block;
+            margin: 5px;
+            font-weight: bold;
+            
+        }
+        
+        .input-profil-content input{
+            width: 700px;
+            height: 40px;
+            padding: 0px 20px ;
+            border-radius: 5px;
+            border: 1px solid #DEDEDE;
+            background: #F5F5F5;
+            
+        }
+        
+        .input-profil-content {
+            padding: 15px;
+            
+        }
+        
+/* Profil Close */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Percobaan */
+
+.nav-profil-email{
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-profil-name{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+}
+
+.nav-profil-detail{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav-profil-photo{
+    width: 50px;
+    height: 50px;
+    border-radius: 90px;
+}
+
+.nav-profil{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+

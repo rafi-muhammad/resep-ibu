@@ -1,0 +1,33 @@
+# Agent tooling (local only)
+.agents/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and builds
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Logs and caches
+*.log
+.cache/
+.phpunit.result.cache
+
+# OS metadata
+desktop.ini
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
