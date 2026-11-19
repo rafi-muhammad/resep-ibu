@@ -12,7 +12,7 @@ export interface PageHeaderProps {
 
 export function PageHeader({ title, description, actions, eyebrow, className }: PageHeaderProps) {
   return (
-    <header
+    <div
       className={cn('flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between', className)}
     >
       <div className="flex max-w-2xl flex-col gap-2">
@@ -21,7 +21,7 @@ export function PageHeader({ title, description, actions, eyebrow, className }: 
         {description ? <p className="text-body text-muted">{description}</p> : null}
       </div>
       {actions ? <div className="flex flex-wrap items-center gap-3">{actions}</div> : null}
-    </header>
+    </div>
   )
 }
 
