@@ -1,0 +1,104 @@
+/*
+ * Design tokens Resep Ibu.
+ * Sumber kebenaran: docs/design/design-system.md
+ *
+ * Semua nilai visual (warna, font, ukuran teks, radius, bayangan, gerak)
+ * didefinisikan di sini. Komponen tidak boleh memakai nilai hex langsung.
+ */
+@theme static {
+  /* Permukaan */
+  --color-bg: #fff7e5; /* cream */
+  --color-surface: #fbe8d5; /* beige */
+  --color-surface-strong: #f3d9bf;
+  --color-inverse: #583217; /* brown */
+
+  /* Teks */
+  --color-ink: #2b1b10;
+  --color-brown: #583217;
+  --color-muted: #6f5b4b;
+  --color-ink-inverse: #fff7e5;
+
+  /* Aksi dan aksen */
+  --color-accent: #de876b; /* terracotta, dekoratif */
+  --color-action: #a34e2e;
+  --color-action-hover: #8e3f24;
+  --color-focus: #583217;
+
+  /* Garis dan status */
+  --color-border: #e3cfb8;
+  --color-field-border: #96775c;
+  --color-success: #2f6b4f;
+  --color-danger: #a3271c;
+
+  /* Tipografi */
+  --font-sans: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-display: clamp(2.5rem, 5vw, 4rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 800;
+
+  --text-h1: clamp(2rem, 4vw, 3rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 800;
+
+  --text-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 800;
+
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.3;
+  --text-h3--font-weight: 700;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-body--font-weight: 400;
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.65;
+  --text-lg--font-weight: 400;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.12em;
+  --text-label--font-weight: 800;
+
+  /* Spasi (4 px sampai 96 px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+
+  /* Bentuk */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(88, 50, 23, 0.06);
+  --shadow-md: 0 8px 24px rgba(88, 50, 23, 0.08);
+
+  /* Layout */
+  --container: 1200px;
+  --container-page: 1200px;
+  --gutter: 24px;
+  --gutter-sm: 20px;
+
+  /* Gerak */
+  --motion-fast: 180ms;
+  --motion-base: 240ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --default-transition-duration: var(--motion-fast);
+  --default-transition-timing-function: var(--ease-out);
+}
