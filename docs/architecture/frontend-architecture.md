@@ -233,11 +233,24 @@ export interface AuthRepository {
 }
 
 export interface CategoryRepository { /* list, getBySlug, create, update, remove */ }
-export interface UserRepository { /* list, getById, updateProfile, updatePassword, updateStatus */ }
+export interface UserRepository { /* list, getById, updateProfile, updateStatus */ }
 export interface ContactRepository { /* create, list, markRead, remove */ }
 export interface ContentRepository { /* getAbout, updateAbout, listTeam, saveTeam, removeTeam */ }
 export interface AdminRepository { /* getSummary */ }
+export interface DemoRepository { /* reset, isPersistent */ }
+
+export interface Repositories {
+  recipes: RecipeRepository;
+  categories: CategoryRepository;
+  users: UserRepository;
+  contact: ContactRepository;
+  content: ContentRepository;
+  admin: AdminRepository;
+  demo: DemoRepository;
+}
 ```
+
+`AuthRepository` sengaja hanya berupa kontrak pada M1-06; implementasinya dibuat di M1-07.
 
 Aturan:
 
@@ -252,8 +265,9 @@ Aturan:
 - Kunci: `session`, `recipes`, `categories`, `users`, `messages`, `content`, `saved`.
 - Latensi simulasi 150–300 ms; dapat dimatikan lewat `VITE_MOCK_LATENCY=0` untuk test.
 - Operasi tulis memperbarui store dan mengembalikan objek terbaru.
-- ID baru memakai `crypto.randomUUID()`.
-- Reset demo tersedia di halaman login (tombol "Reset data demo").
+- ID baru memakai `crypto.randomUUID()`; slug dibuat unik dengan sufiks angka.
+- `createMockRepositories(store)` merakit seluruh adapter; `repositories` adalah instance tunggal aplikasi.
+- Reset demo tersedia di halaman login (tombol "Reset data demo") dan lewat `demo.reset()`.
 - Jika `localStorage` tidak tersedia, gunakan fallback in-memory dan tampilkan peringatan.
 
 ## 8. Autentikasi demo
