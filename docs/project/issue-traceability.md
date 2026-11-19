@@ -7,14 +7,14 @@
 | Baseline commit | `4eb2c466c58c1e2a55d938fc925fb31ea442edcd` |
 | Jumlah issue | 24 |
 | Milestone | M0–M5 |
-| Status | Seluruh issue dibuat dan diverifikasi; implementasi belum dimulai |
+| Status | Implementasi berjalan; M0-01 dan M1-01 selesai |
 
 ## 1. Peta issue
 
 | ID | Issue | Judul | Milestone | Dependencies | Status |
 | --- | --- | --- | --- | --- | --- |
 | M0-01 | [#1](https://github.com/rafi-muhammad/resep-ibu/issues/1) | Baseline arsip legacy, dokumentasi, struktur | M0 | — | **CLOSED** |
-| M1-01 | [#2](https://github.com/rafi-muhammad/resep-ibu/issues/2) | Scaffold Vite React TS + quality scripts | M1 | #1 | OPEN |
+| M1-01 | [#2](https://github.com/rafi-muhammad/resep-ibu/issues/2) | Scaffold Vite React TS + quality scripts | M1 | #1 | **CLOSED** |
 | M1-02 | [#3](https://github.com/rafi-muhammad/resep-ibu/issues/3) | Design tokens, Nunito, base styles | M1 | #2 | OPEN |
 | M1-03 | [#4](https://github.com/rafi-muhammad/resep-ibu/issues/4) | Form dan feedback primitives | M1 | #3 | OPEN |
 | M1-04 | [#5](https://github.com/rafi-muhammad/resep-ibu/issues/5) | Display, dialog, navigation primitives | M1 | #3 | OPEN |
@@ -78,7 +78,7 @@
 | Milestone | Nomor | Jumlah issue | Status |
 | --- | --- | --- | --- |
 | M0 — Baseline | 1 | 1 | Selesai |
-| M1 — Foundation | 2 | 8 | Belum dimulai |
+| M1 — Foundation | 2 | 8 | Berjalan (1/8) |
 | M2 — Public Experience | 3 | 5 | Belum dimulai |
 | M3 — Account & Contribution | 4 | 4 | Belum dimulai |
 | M4 — Admin | 5 | 3 | Belum dimulai |
@@ -109,6 +109,7 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | --- | --- |
 | `4eb2c46` | Baseline: arsip legacy, 9 dokumen perencanaan, README, AGENTS, .gitignore |
 | Commit dokumentasi ini | Traceability 24 issue dan verifikasi |
+| `e83eac3` | M1-01: scaffold Vite React TS, Tailwind, Vitest, oxlint, Prettier (#2) |
 
 ## 6. Verifikasi
 
@@ -121,8 +122,9 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | Distribusi milestone | 1 / 8 / 5 / 4 / 3 / 3 |
 | Dependensi tidak valid | 0 |
 | Issue #1 | CLOSED, alasan completed |
-| SHA lokal = remote = GitHub | `4eb2c466c58c1e2a55d938fc925fb31ea442edcd` |
-| File terlacak | 164 |
+| Issue #2 | CLOSED, alasan completed |
+| Commit implementasi terakhir | `e83eac3f10ad80bf8d6c297590f8082d119aa1fd` |
+| File terlacak | 181 |
 | File terlarang di Git | 0 |
 | Fingerprint legacy | `e054d179...977212` (identik) |
 
