@@ -53,6 +53,10 @@ export function AuthLayout() {
             Resep Ibu
           </Link>
           <Outlet />
+          <p className="mt-8 rounded-sm border border-border bg-surface px-4 py-3 text-small text-muted">
+            Mode demo: sesi disimpan di browser ini. Ini bukan autentikasi nyata dan tidak boleh
+            dipakai untuk data sungguhan.
+          </p>
         </div>
       </main>
     </div>

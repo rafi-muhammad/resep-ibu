@@ -150,5 +150,6 @@ export interface Repositories {
   contact: ContactRepository
   content: ContentRepository
   admin: AdminRepository
+  auth: AuthRepository
   demo: DemoRepository
 }

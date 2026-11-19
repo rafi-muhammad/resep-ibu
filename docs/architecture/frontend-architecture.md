@@ -262,7 +262,7 @@ Aturan:
 
 - Data awal: `src/mocks/*` (24 resep, 7 kategori, 4 pengguna, 6 pesan, 3 tim).
 - Salinan kerja disimpan di `localStorage` dengan namespace `resep-ibu:v1:`.
-- Kunci: `session`, `recipes`, `categories`, `users`, `messages`, `content`, `saved`.
+- Kunci: `session`, `recipes`, `categories`, `users`, `messages`, `content`, `saved`, `credentials`.
 - Latensi simulasi 150–300 ms; dapat dimatikan lewat `VITE_MOCK_LATENCY=0` untuk test.
 - Operasi tulis memperbarui store dan mengembalikan objek terbaru.
 - ID baru memakai `crypto.randomUUID()`; slug dibuat unik dengan sufiks angka.
@@ -272,12 +272,14 @@ Aturan:
 
 ## 8. Autentikasi demo
 
-- `AuthProvider` memuat sesi dari `resep-ibu:v1:session`.
-- Login memvalidasi kredensial terhadap store pengguna dan status aktif.
-- Password demo disimpan sebagai hash sederhana **hanya** untuk simulasi; tidak pernah ditampilkan.
-- `ProtectedRoute` menerima `requireRole?: Role`.
-- `returnTo` disimpan di query string, bukan state global.
-- Logout menghapus sesi dan data sensitif di memori.
+- `AuthProvider` dipasang di `RootLayout`, memuat sesi dari `resep-ibu:v1:session` dan menyediakan `user`, `status`, `login`, `register`, `logout`, serta penanda `isDemo`.
+- Login memvalidasi kredensial terhadap store pengguna dan status aktif; pesan gagal tidak membedakan email tidak dikenal, kata sandi salah, dan akun non-aktif.
+- Password demo disimpan sebagai hash demo **hanya** untuk simulasi; tidak pernah ditampilkan.
+- `ProtectedRoute` menerima `requireRole?: Role`; tamu diarahkan ke `/masuk?returnTo=...`, role yang tidak cocok diarahkan ke beranda.
+- `returnTo` disimpan di query string, dibangun oleh `buildLoginPath`, dan dibaca lewat `sanitizeReturnTo`/`getReturnTo` yang menolak URL eksternal, protocol-relative, backslash, karakter kontrol, serta halaman auth.
+- Logout menghapus kunci sesi dan mengarahkan ke `/masuk` tanpa menyimpan riwayat route terproteksi.
+- Header dan menu mobile menampilkan tautan akun sesuai sesi serta tombol keluar.
+- Halaman auth menampilkan catatan bahwa ini mode demo.
 
 **Peringatan:** ini bukan keamanan nyata dan tidak boleh dipakai di produksi.
 

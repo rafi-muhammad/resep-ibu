@@ -14,6 +14,12 @@ export interface ContentState {
   team: TeamMember[]
 }
 
+/** Sesi demo: hanya id pengguna dan waktu mulai, tanpa token. */
+export interface SessionState {
+  userId: string
+  startedAt: string
+}
+
 /** Salinan kerja demo yang disimpan di localStorage. */
 export interface DemoState {
   recipes: Recipe[]
@@ -22,6 +28,9 @@ export interface DemoState {
   messages: ContactMessage[]
   content: ContentState
   saved: Record<string, string[]>
+  /** Peta `userId` → hash demo kata sandi. */
+  credentials: Record<string, string>
+  session: SessionState | null
 }
 
 export type DemoKey = keyof DemoState
@@ -33,6 +42,8 @@ export const demoKeys: DemoKey[] = [
   'messages',
   'content',
   'saved',
+  'credentials',
+  'session',
 ]
 
 export interface StorageLike {
@@ -45,6 +56,7 @@ export interface DemoStore {
   readonly persistent: boolean
   read<K extends DemoKey>(key: K, seed: DemoState[K]): DemoState[K]
   write<K extends DemoKey>(key: K, value: DemoState[K]): void
+  remove<K extends DemoKey>(key: K): void
   reset(): void
 }
 
@@ -138,14 +150,18 @@ export function createDemoStore(storage?: StorageLike | null): DemoStore {
     }
   }
 
+  function remove<K extends DemoKey>(name: K): void {
+    try {
+      backend.removeItem(keyOf(name))
+    } catch {
+      fallbackToMemory()
+      backend.removeItem(keyOf(name))
+    }
+  }
+
   function reset(): void {
     for (const name of demoKeys) {
-      try {
-        backend.removeItem(keyOf(name))
-      } catch {
-        fallbackToMemory()
-        backend.removeItem(keyOf(name))
-      }
+      remove(name)
     }
   }
 
@@ -155,6 +171,7 @@ export function createDemoStore(storage?: StorageLike | null): DemoStore {
     },
     read,
     write,
+    remove,
     reset,
   }
 }

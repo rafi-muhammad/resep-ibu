@@ -8,7 +8,7 @@ export interface UserMenuUser {
 }
 
 export interface UserMenuProps {
-  /** Sesi nyata dihubungkan pada M1-07; tanpa user, menu menampilkan tautan tamu. */
+  /** Sesi demo dari AuthProvider; tanpa user, menu menampilkan tautan tamu. */
   user?: UserMenuUser | null
   onLogout?: () => void
 }

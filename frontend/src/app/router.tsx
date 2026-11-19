@@ -9,6 +9,7 @@ import {
 } from '@/components/layout'
 import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
+import { ProtectedRoute } from '@/features/auth'
 
 import { AdminRoute } from './admin-route'
 import { RouteErrorBoundary } from './error-boundary'
@@ -138,7 +139,11 @@ export const routes: RouteObject[] = [
         ],
       },
       {
-        element: <AccountLayout />,
+        element: (
+          <ProtectedRoute>
+            <AccountLayout />
+          </ProtectedRoute>
+        ),
         children: [
           {
             path: 'profil',
@@ -193,7 +198,11 @@ export const routes: RouteObject[] = [
         ],
       },
       {
-        element: <AdminShell />,
+        element: (
+          <ProtectedRoute requireRole="admin">
+            <AdminShell />
+          </ProtectedRoute>
+        ),
         children: [
           {
             path: 'admin',

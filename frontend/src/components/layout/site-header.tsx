@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { IconButton, SearchField } from '@/components/ui'
+import { useAuth, useLogout } from '@/features/auth'
 
 import { Container } from './container'
 import { DesktopNav } from './desktop-nav'
@@ -12,6 +13,10 @@ import { UserMenu } from './user-menu'
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
+  const { user, status } = useAuth()
+  const logout = useLogout()
+
+  const menuUser = user ? { name: user.name, role: user.role } : null
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/95 backdrop-blur">
@@ -41,7 +46,7 @@ export function SiteHeader() {
               navigate(value ? `/resep?q=${encodeURIComponent(value)}` : '/resep')
             }
           />
-          <UserMenu />
+          <UserMenu user={menuUser} onLogout={logout} />
         </div>
 
         <IconButton
@@ -53,6 +58,11 @@ export function SiteHeader() {
       </Container>
 
       <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} />
+      {status === 'loading' ? (
+        <span className="sr-only" role="status">
+          Memeriksa sesi
+        </span>
+      ) : null}
     </header>
   )
 }

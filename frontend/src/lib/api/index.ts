@@ -1,5 +1,5 @@
 export { ApiError, type ApiErrorCode } from './errors'
-export { createMockRepositories, repositories } from './mock'
+export { createMockRepositories, DEMO_PASSWORD, repositories } from './mock'
 export type {
   AdminRepository,
   AuthRepository,

@@ -5,6 +5,14 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { RouteErrorBoundary } from '@/app/error-boundary'
 import { routes } from '@/app/router'
+import { STORAGE_NAMESPACE } from '@/lib/api/mock/store'
+
+function seedSession(userId: string) {
+  window.localStorage.setItem(
+    `${STORAGE_NAMESPACE}session`,
+    JSON.stringify({ userId, startedAt: new Date().toISOString() }),
+  )
+}
 
 function renderRoute(path: string) {
   const router = createMemoryRouter(routes, { initialEntries: [path] })
@@ -13,6 +21,7 @@ function renderRoute(path: string) {
 
 describe('Router', () => {
   beforeEach(() => {
+    window.localStorage.clear()
     Object.defineProperty(window, 'scrollTo', { value: vi.fn(), writable: true })
   })
 
@@ -91,6 +100,7 @@ describe('Router', () => {
   })
 
   it('memuat route admin secara lazy beserta sidebar', async () => {
+    seedSession('user-admin')
     renderRoute('/admin')
 
     expect(await screen.findByRole('heading', { level: 1, name: 'Dasbor admin' })).toBeVisible()
@@ -98,14 +108,45 @@ describe('Router', () => {
     expect(screen.getByRole('link', { name: 'Lihat situs' })).toHaveAttribute('href', '/')
   })
 
-  it('merender halaman akun dengan navigasi akun', () => {
+  it('merender halaman akun dengan navigasi akun', async () => {
+    seedSession('user-pembaca-1')
     renderRoute('/profil/disimpan')
 
-    expect(screen.getByRole('heading', { level: 1, name: 'Resep disimpan' })).toBeVisible()
+    expect(await screen.findByRole('heading', { level: 1, name: 'Resep disimpan' })).toBeVisible()
     expect(screen.getByRole('link', { name: 'Resep disimpan' })).toHaveAttribute(
       'aria-current',
       'page',
     )
+  })
+
+  it('mengarahkan tamu dari profil ke halaman masuk dengan returnTo', async () => {
+    renderRoute('/profil')
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Masuk' })).toBeVisible()
+    expect(screen.queryByRole('heading', { name: 'Profil saya' })).toBeNull()
+  })
+
+  it('menolak pengguna biasa membuka admin', async () => {
+    seedSession('user-dapur')
+    renderRoute('/admin')
+
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Resep masakan rumahan' }),
+    ).toBeVisible()
+    expect(screen.queryByRole('heading', { name: 'Dasbor admin' })).toBeNull()
+  })
+
+  it('menampilkan sesi aktif di header dan logout kembali ke halaman masuk', async () => {
+    seedSession('user-admin')
+    renderRoute('/')
+
+    expect(await screen.findByText('Admin Resep Ibu')).toBeVisible()
+    expect(screen.getByRole('link', { name: 'Admin' })).toHaveAttribute('href', '/admin')
+
+    await userEvent.setup().click(screen.getByRole('button', { name: 'Keluar' }))
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Masuk' })).toBeVisible()
+    expect(window.localStorage.getItem(`${STORAGE_NAMESPACE}session`)).toBeNull()
   })
 
   it('merender formulir masuk di dalam layout auth', () => {
