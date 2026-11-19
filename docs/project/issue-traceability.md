@@ -18,7 +18,7 @@
 | M1-02 | [#3](https://github.com/rafi-muhammad/resep-ibu/issues/3) | Design tokens, Nunito, base styles | M1 | #2 | **CLOSED** |
 | M1-03 | [#4](https://github.com/rafi-muhammad/resep-ibu/issues/4) | Form dan feedback primitives | M1 | #3 | **CLOSED** |
 | M1-04 | [#5](https://github.com/rafi-muhammad/resep-ibu/issues/5) | Display, dialog, navigation primitives | M1 | #3 | **CLOSED** |
-| M1-05 | [#6](https://github.com/rafi-muhammad/resep-ibu/issues/6) | Routing, layout, shell, error boundary | M1 | #3, #4, #5 | OPEN |
+| M1-05 | [#6](https://github.com/rafi-muhammad/resep-ibu/issues/6) | Routing, layout, shell, error boundary | M1 | #3, #4, #5 | **CLOSED** |
 | M1-06 | [#7](https://github.com/rafi-muhammad/resep-ibu/issues/7) | Domain types, mock repository, fixtures | M1 | #2 | OPEN |
 | M1-07 | [#8](https://github.com/rafi-muhammad/resep-ibu/issues/8) | Demo auth provider dan protected routes | M1 | #6, #7 | OPEN |
 | M1-08 | [#9](https://github.com/rafi-muhammad/resep-ibu/issues/9) | Optimasi aset WebP dan mapping | M1 | #1 | OPEN |
@@ -78,7 +78,7 @@
 | Milestone | Nomor | Jumlah issue | Status |
 | --- | --- | --- | --- |
 | M0 — Baseline | 1 | 1 | Selesai |
-| M1 — Foundation | 2 | 8 | Berjalan (4/8) |
+| M1 — Foundation | 2 | 8 | Berjalan (5/8) |
 | M2 — Public Experience | 3 | 5 | Belum dimulai |
 | M3 — Account & Contribution | 4 | 4 | Belum dimulai |
 | M4 — Admin | 5 | 3 | Belum dimulai |
@@ -114,6 +114,7 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | `cafeb00` | M1-03: 14 form dan feedback primitives + 29 test (#4) |
 | `af38372` | M1-04: display, dialog, dan navigation primitives + test (#5) |
 | `80ab3b1` | M1-04: perbaikan grup font-size kustom di `cn()` (#5) |
+| `d4e18be` | M1-05: router, layout publik, auth, akun, admin shell, error boundary + 10 test (#6) |
 
 ## 6. Verifikasi
 
@@ -130,8 +131,9 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | Issue #3 | CLOSED, alasan completed |
 | Issue #4 | CLOSED, alasan completed |
 | Issue #5 | CLOSED, alasan completed |
-| Commit implementasi terakhir | `80ab3b1` |
-| File terlacak | 223 |
+| Issue #6 | CLOSED, alasan completed |
+| Commit implementasi terakhir | `d4e18be` |
+| File terlacak | 247 |
 | File terlarang di Git | 0 |
 | Fingerprint legacy | `e054d179...977212` (identik) |
 

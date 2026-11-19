@@ -36,18 +36,18 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 
 | Komponen | Tujuan | Catatan | Issue |
 | --- | --- | --- | --- |
-| `Container` | Lebar dan gutter konsisten | maks 1200 px | M1-04 |
-| `SiteHeader` | Header publik | logo, nav, search, akun | M1-04 |
-| `DesktopNav` | Navigasi ≥1024 | tautan aktif | M1-04 |
-| `MobileNav` | Drawer <1024 | focus trap, Esc, scroll lock | M1-04 |
-| `UserMenu` | Menu akun | profil, resep saya, admin jika role, logout | M1-04 |
-| `SiteFooter` | Footer publik | logo, tautan, copyright | M1-04 |
-| `AuthLayout` | Layout login/registrasi | split, motif mangkuk | M1-04 |
-| `AccountLayout` | Sidebar akun | 4 tautan | M1-04 |
-| `AdminShell` | Kerangka admin | sidebar + header + main | M1-04 |
-| `AdminSidebar` | Navigasi admin | drawer di mobile | M1-04 |
-| `SkipLink` | Aksesibilitas | target `#main` | M1-04 |
-| `ScrollToTop` | Reset scroll | hormati `prefers-reduced-motion` | M1-04 |
+| `Container` | Lebar dan gutter konsisten | maks 1200 px | M1-05 |
+| `SiteHeader` | Header publik | logo, nav, search, akun | M1-05 |
+| `DesktopNav` | Navigasi ≥1024 | tautan aktif | M1-05 |
+| `MobileNav` | Drawer <1024 | focus trap, Esc, scroll lock | M1-05 |
+| `UserMenu` | Menu akun | profil, resep saya, admin jika role, logout | M1-05 |
+| `SiteFooter` | Footer publik | logo, tautan, copyright | M1-05 |
+| `AuthLayout` | Layout login/registrasi | split, motif mangkuk | M1-05 |
+| `AccountLayout` | Sidebar akun | 4 tautan | M1-05 |
+| `AdminShell` | Kerangka admin | sidebar + header + main | M1-05 |
+| `AdminSidebar` | Navigasi admin | drawer di mobile | M1-05 |
+| `SkipLink` | Aksesibilitas | target `#main` | M1-05 |
+| `ScrollToTop` | Reset scroll | hormati `prefers-reduced-motion` | M1-05 |
 
 ## 3. Domain resep (`src/components/recipe`)
 
@@ -100,8 +100,8 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 | --- | --- | --- |
 | `PageSkeleton` | Skeleton layout halaman | M1-03 |
 | `ErrorState` | Error dengan retry | M1-03 |
-| `NotFoundPage` | Halaman 404 | M1-04 |
-| `RouteErrorBoundary` | Penangkap error route | M1-04 |
+| `NotFoundPage` | Halaman 404 | M1-05 |
+| `RouteErrorBoundary` | Penangkap error route | M1-05 |
 | `ProtectedRoute` | Guard login/role | M1-06 |
 | `DemoBadge` | Penanda data demo | M1-05 |
 
