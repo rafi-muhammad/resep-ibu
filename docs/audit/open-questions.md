@@ -20,6 +20,7 @@
 | D-14 | Git | Commit + push setiap issue | 19 Nov 2026 | Direct ke `main` |
 | D-15 | `.agents/` | Gitignore, `skills-lock.json` di-track | 19 Nov 2026 | Repo lebih ringan |
 | D-16 | Kredensial legacy | Arsip apa adanya + peringatan | 19 Nov 2026 | Tidak ada redaksi |
+| D-17 | Lint frontend | oxlint, bukan ESLint | 19 Nov 2026 | Sesuai template Vite, cepat, tanpa konfigurasi tambahan; Prettier tetap untuk format |
 
 ## 2. Pertanyaan yang masih terbuka
 

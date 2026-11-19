@@ -31,6 +31,7 @@ Jangan memulai Phase 2 sebelum Phase 1 disetujui.
 
 - React 19 + TypeScript strict + Vite + Tailwind CSS + React Router + Lucide React.
 - Vitest + React Testing Library; Playwright untuk alur kritis.
+- Lint memakai **oxlint** (bukan ESLint) dan format memakai Prettier.
 - Tidak ada state management library; gunakan Context untuk auth dan toast.
 - Struktur fitur: `frontend/src/features/<domain>`; primitif di `frontend/src/components/ui`.
 - Akses data hanya melalui repository di `frontend/src/lib/api`; komponen tidak mengimpor fixture langsung.
@@ -46,7 +47,7 @@ Jangan memulai Phase 2 sebelum Phase 1 disetujui.
 ## Git dan issue
 
 1. Kerjakan hanya scope issue yang sedang aktif.
-2. Sebelum commit: `npm run typecheck`, `npm run lint`, `npm run test`, `npm run build` (sesuai ketersediaan).
+2. Sebelum commit: `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run test`, `npm run build` (sesuai ketersediaan).
 3. Commit: `type(scope): ringkasan (#issue)`, contoh `feat(public): recipe listing with search (#12)`.
 4. Push ke `origin main` setelah setiap issue selesai.
 5. Jangan force push, reset, atau menghapus pekerjaan pengguna.

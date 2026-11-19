@@ -28,7 +28,7 @@
 | Ikon | Lucide React | Ukuran 16/20/24 |
 | Test unit | Vitest + RTL | `jsdom` |
 | Test E2E | Playwright | Alur kritis saja |
-| Format/lint | Prettier + ESLint | Konfigurasi tunggal |
+| Format/lint | Prettier + oxlint | Konfigurasi tunggal; oxlint sesuai template Vite dan lebih cepat dari ESLint (lihat D-17) |
 
 Tidak dipakai: Redux/Zustand, React Query, Axios, Formik/RHF, komponen UI eksternal, CKEditor, jQuery.
 
@@ -329,7 +329,7 @@ Tidak ada global store. Bila cache diperlukan, gunakan modul kecil dengan invali
 | A11y | axe pada halaman utama + keyboard manual | `@axe-core/playwright` bila disetujui |
 | Visual | screenshot 390/768/1024/1440 | Playwright |
 
-Quality gate: `npm run typecheck && npm run lint && npm run test && npm run build`.
+Quality gate: `npm run typecheck && npm run lint && npm run format:check && npm run test && npm run build`.
 
 ## 16. Kontrak Laravel Phase 2
 
