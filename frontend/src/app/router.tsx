@@ -10,6 +10,7 @@ import {
 import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
 import { ProtectedRoute } from '@/features/auth'
+import { PopularRecipesPage, RecipeListPage } from '@/features/recipes'
 
 import { AdminRoute } from './admin-route'
 import { RouteErrorBoundary } from './error-boundary'
@@ -42,23 +43,11 @@ export const routes: RouteObject[] = [
           },
           {
             path: 'resep',
-            element: (
-              <PlaceholderPage
-                eyebrow="Katalog"
-                title="Semua resep"
-                description="Jelajahi seluruh resep yang tersedia."
-              />
-            ),
+            element: <RecipeListPage />,
           },
           {
             path: 'resep/populer',
-            element: (
-              <PlaceholderPage
-                eyebrow="Katalog"
-                title="Resep populer"
-                description="Resep yang paling banyak dibuka."
-              />
-            ),
+            element: <PopularRecipesPage />,
           },
           {
             path: 'resep/:slug',
