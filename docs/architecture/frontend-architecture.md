@@ -321,7 +321,10 @@ Tidak ada global store. Bila cache diperlukan, gunakan modul kecil dengan invali
 ## 13. Aset
 
 - Sumber: `legacy/`; turunan WebP di `frontend/public/media`.
+- Pipeline: `python frontend/scripts/optimize-assets.py` (idempoten; tidak mengubah `legacy/`).
+- Ukuran: kategori 400×400 (≤ 40 KB), resep 1200×900 (≤ 120 KB), hero ≤ 250 KB, avatar 256×256.
 - Nama file deskriptif berbasis slug, bukan hash.
+- Alt text tercatat di `docs/audit/asset-inventory.md`.
 - `ImageWithFallback` menangani gambar gagal.
 - Tidak ada hotlink ke domain eksternal.
 
