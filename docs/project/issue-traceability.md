@@ -7,7 +7,7 @@
 | Baseline commit | `4eb2c466c58c1e2a55d938fc925fb31ea442edcd` |
 | Jumlah issue | 24 |
 | Milestone | M0–M5 |
-| Status | M0 dan M1 selesai; M2 belum dimulai |
+| Status | M0 dan M1 selesai; M2 berjalan (1/5) |
 
 ## 1. Peta issue
 
@@ -22,7 +22,7 @@
 | M1-06 | [#7](https://github.com/rafi-muhammad/resep-ibu/issues/7) | Domain types, mock repository, fixtures | M1 | #2 | **CLOSED** |
 | M1-07 | [#8](https://github.com/rafi-muhammad/resep-ibu/issues/8) | Demo auth provider dan protected routes | M1 | #6, #7 | **CLOSED** |
 | M1-08 | [#9](https://github.com/rafi-muhammad/resep-ibu/issues/9) | Optimasi aset WebP dan mapping | M1 | #1 | **CLOSED** |
-| M2-01 | [#10](https://github.com/rafi-muhammad/resep-ibu/issues/10) | Daftar resep, search, filter, pagination, populer | M2 | #5, #6, #7, #9 | OPEN |
+| M2-01 | [#10](https://github.com/rafi-muhammad/resep-ibu/issues/10) | Daftar resep, search, filter, pagination, populer | M2 | #5, #6, #7, #9 | **CLOSED** |
 | M2-02 | [#11](https://github.com/rafi-muhammad/resep-ibu/issues/11) | Beranda | M2 | #8, #10 | OPEN |
 | M2-03 | [#12](https://github.com/rafi-muhammad/resep-ibu/issues/12) | Detail resep | M2 | #8, #10 | OPEN |
 | M2-04 | [#13](https://github.com/rafi-muhammad/resep-ibu/issues/13) | Indeks dan detail kategori | M2 | #9, #10 | OPEN |
@@ -79,7 +79,7 @@
 | --- | --- | --- | --- |
 | M0 — Baseline | 1 | 1 | Selesai |
 | M1 — Foundation | 2 | 8 | Selesai (8/8) |
-| M2 — Public Experience | 3 | 5 | Belum dimulai |
+| M2 — Public Experience | 3 | 5 | Berjalan (1/5) |
 | M3 — Account & Contribution | 4 | 4 | Belum dimulai |
 | M4 — Admin | 5 | 3 | Belum dimulai |
 | M5 — QA & Handoff | 6 | 3 | Belum dimulai |
@@ -118,6 +118,7 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | `1ccf83e` | M1-06: domain types, 7 repository, adapter mock localStorage, fixtures + 40 test (#7) |
 | `aa6cf34` | M1-07: auth provider, sesi demo, guard profil/admin, returnTo aman + 24 test auth dan 3 test router (#8) |
 | `76ae52d` | M1-08: pipeline WebP, 38 aset media, mapping dan alt, 4 test aset (#9) |
+| `0d857c2` | M2-01: /resep dengan RecipeCard, pencarian debounce, filter, sort, pagination, /resep/populer, error state + 17 test (#10) |
 
 ## 6. Verifikasi
 
@@ -138,17 +139,20 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | Issue #7 | CLOSED, alasan completed |
 | Issue #8 | CLOSED, alasan completed |
 | Issue #9 | CLOSED, alasan completed |
-| Commit implementasi terakhir | `76ae52d` |
+| Issue #10 | CLOSED, alasan completed |
+| Commit implementasi terakhir | `0d857c2` |
 | Test data layer (#7) | 40 passed |
 | Test auth dan guard (#8) | 24 passed + 3 test router |
 | Test aset (#9) | 4 passed |
-| Total test | 147 passed (16 file) |
+| Test daftar resep (#10) | 17 passed (2 file: query dan integrasi halaman) |
+| Total test | 164 passed (18 file) |
+| Responsif daftar resep (#10) | Grid 1/2/3 kolom pada 390/768/1024/1440 px, tanpa overflow horizontal |
 | Aset media (#9) | 38 berkas, 2,5 MB (legacy 40 MB) |
 | Batas ukuran aset (#9) | Kategori ≤ 40 KB, resep ≤ 120 KB, hero ≤ 250 KB |
 | Idempotensi skrip aset (#9) | Hash 38 berkas identik setelah dijalankan ulang |
 | Fixture demo (#7) | 24 resep, 7 kategori, 4 pengguna, 6 pesan, 3 tim |
 | Fixture diimpor komponen | 0 (hanya `src/lib/api` dan `src/mocks`) |
-| File terlacak | 321 |
+| File terlacak | 335 |
 | File terlarang di Git | 0 |
 | Fingerprint legacy | `e054d179...977212` (identik) |
 

@@ -24,6 +24,7 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 | `Skeleton` | Placeholder loading | `width`, `height`, `rounded` | pulse | daftar, detail | M1-03 |
 | `Spinner` | Indikator proses | `size`, `label` | spin | tombol, halaman | M1-03 |
 | `EmptyState` | Kondisi kosong | `icon`, `title`, `description`, `action` | — | semua daftar | M1-03 |
+| `ErrorState` | Error lokal dengan retry | `title`, `description`, `onRetry`, `retryLabel` | — | daftar, panel | M2-01 |
 | `Dialog` | Panel modal | `open`, `onClose`, `title`, `size` | open, focus trap | konfirmasi, form admin | M1-03 |
 | `ConfirmDialog` | Konfirmasi destruktif | `title`, `description`, `confirmLabel`, `tone` | pending | hapus, ubah status | M1-03 |
 | `Pagination` | Navigasi halaman | `page`, `totalPages`, `onChange` | disabled prev/next | `/resep`, kategori | M1-03 |
@@ -53,8 +54,9 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 
 | Komponen | Tujuan | Props | Issue |
 | --- | --- | --- | --- |
-| `RecipeCard` | Kartu resep | `recipe`, `variant: grid\|compact` | M2-02 |
-| `RecipeGrid` | Grid responsif | `recipes`, `loading`, `empty` | M2-02 |
+| `RecipeCard` | Kartu resep | `recipe`, `category` | M2-01 |
+| `RecipeGrid` | Grid responsif | `recipes`, `categories`, `loading`, `skeletonCount` | M2-01 |
+| `RecipeFilters` | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback | M2-01 |
 | `RecipeMeta` | Waktu, porsi, kesulitan | `recipe` | M2-03 |
 | `IngredientList` | Bahan terkelompok | `groups: IngredientGroup[]` | M2-03 |
 | `StepList` | Langkah bernomor | `steps: string[]` | M2-03 |
