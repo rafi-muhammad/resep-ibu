@@ -123,23 +123,105 @@ Foto ini tidak memiliki metadata judul, penulis, atau lisensi. Tidak dapat dipas
 
 **Keputusan (19 November 2026):** Phase 1 memakai foto legacy saja, dioptimasi ke WebP, untuk demo lokal. Publikasi publik menunggu konfirmasi hak pakai.
 
-## 9. Rencana pipeline aset (`M1-07`)
+## 9. Pipeline aset (M1-08, issue #9)
+
+Status: **DOCUMENTED** — implementasi selesai 20 November 2026.
 
 ```text
 legacy/…                      →  frontend/public/media/
-  WebAset/Logo.png             →  brand/logo.png, brand/logo.webp
+  WebAset/Logo.png             →  brand/logo.png
   WebAset/Logobl.png           →  brand/logo-small.png
   WebAset/Frame105.png         →  brand/bowl-motif.webp
   Homepage/img/1..7            →  categories/<slug>.webp (400×400)
-  kel_resep/img/*              →  recipes/<slug>.webp (1200×900, cover)
-  UserProfil/default.jpg       →  avatars/default.webp
+  foto legacy terpilih         →  recipes/<slug>.webp (1200×900)
+  UserProfil/default.jpg       →  avatars/default.webp (256×256)
 ```
 
-Aturan:
+Skrip: `frontend/scripts/optimize-assets.py` (Pillow). Idempoten, tidak menyentuh
+`legacy/`, menurunkan kualitas WebP otomatis sampai batas ukuran terpenuhi.
 
-1. File asli tetap di `legacy/`; tidak dihapus.
-2. Turunan WebP diberi nama deskriptif, bukan hash.
-3. Setiap gambar punya `alt` yang ditulis manusia.
-4. Tidak menambah foto stok atau hasil generate tanpa persetujuan.
+**Total hasil:** 38 berkas, 2,4 MB (legacy 38,5 MB).
+
+### 9.1 Brand
+
+| Aset | Sumber | Ukuran | Alt |
+| --- | --- | --- | --- |
+| `/media/brand/logo.png` | `WebAset/Logo.png` | 4,7 KB | Logo Resep Ibu |
+| `/media/brand/logo-small.png` | `WebAset/Logobl.png` | 2,5 KB | Logo Resep Ibu versi kecil |
+| `/media/brand/bowl-motif.webp` | `WebAset/Frame105.png` | 17,9 KB | Dekoratif; pakai `alt=""` |
+
+### 9.2 Kategori (400×400)
+
+| Aset | Sumber | Ukuran | Alt |
+| --- | --- | --- | --- |
+| `/media/categories/minuman.webp` | `Homepage/img/1. Minuman.png` | 22,2 KB | Ilustrasi kategori Minuman |
+| `/media/categories/makanan-penutup.webp` | `Homepage/img/2. Makanan penutup.png` | 12,1 KB | Ilustrasi kategori Makanan Penutup |
+| `/media/categories/makanan-berkuah.webp` | `Homepage/img/3. Makanan berkuah.png` | 27,2 KB | Ilustrasi kategori Makanan Berkuah |
+| `/media/categories/makanan-pedas.webp` | `Homepage/img/4. Makanan Pedas.png` | 37,7 KB | Ilustrasi kategori Makanan Pedas |
+| `/media/categories/makanan-sehat.webp` | `Homepage/img/5. Makanan Sehat.png` | 32,0 KB | Ilustrasi kategori Makanan Sehat |
+| `/media/categories/olahan-buah.webp` | `Homepage/img/6. Olohan Buah.png` | 13,5 KB | Ilustrasi kategori Olahan Buah |
+| `/media/categories/lainnya.webp` | `Homepage/img/7. Lainnya.png` | 2,6 KB | Ilustrasi kategori Lainnya |
+
+### 9.3 Resep (1200×900)
+
+Penempatan foto adalah **INFERRED** untuk demo: tidak ada metadata yang
+memastikan foto cocok dengan resep tertentu. Alt ditulis netral agar tidak
+mengklaim isi foto.
+
+| Aset | Sumber | Ukuran | Alt |
+| --- | --- | --- | --- |
+| `recipes/es-jeruk-peras.webp` | `kel_kategori/gambar/63bc324e5b66c.png` | 118,5 KB | Foto demo untuk resep Es Jeruk Peras |
+| `recipes/wedang-jahe-serai.webp` | `kel_resep/img/63be384946884.jpg` | 111,2 KB | Foto demo untuk resep Wedang Jahe Serai |
+| `recipes/teh-lemon-madu.webp` | `Homepage/img/1. Minuman.png` | 60,0 KB | Foto demo untuk resep Teh Lemon Madu |
+| `recipes/pisang-goreng-crispy.webp` | `kel_resep/img/63b546a3a8685.jpeg` | 114,7 KB | Foto demo untuk resep Pisang Goreng Crispy |
+| `recipes/puding-roti-tawar.webp` | `kel_kategori/gambar/63bc377d3ab8e.png` | 51,9 KB | Foto demo untuk resep Puding Roti Tawar |
+| `recipes/klepon-gula-merah.webp` | `kel_resep/img/63be39005599a.jpeg` | 48,8 KB | Foto demo untuk resep Klepon Gula Merah |
+| `recipes/bolu-kukus-pandan.webp` | `kel_resep/img/63bd8815b1b3a.jpeg` | 112,5 KB | Foto demo untuk resep Bolu Kukus Pandan |
+| `recipes/soto-ayam-kampung.webp` | `kel_resep/img/63bd5f5c0f471.jpg` | 85,0 KB | Foto demo untuk resep Soto Ayam Kampung |
+| `recipes/sayur-lodeh.webp` | `kel_resep/img/63bd6cdb62bb6.jpg` | 51,5 KB | Foto demo untuk resep Sayur Lodeh |
+| `recipes/sup-bakso-sapi.webp` | `kel_kategori/gambar/63bc37126b700.png` | 106,5 KB | Foto demo untuk resep Sup Bakso Sapi |
+| `recipes/rawon-daging.webp` | `kel_resep/img/63bd67259cbac.jpg` | 87,8 KB | Foto demo untuk resep Rawon Daging |
+| `recipes/ayam-geprek-sambal-bawang.webp` | `kel_resep/img/63a5d18a1ad4c.jpeg` | 99,6 KB | Foto demo untuk resep Ayam Geprek Sambal Bawang |
+| `recipes/sambal-goreng-kentang.webp` | `kel_kategori/gambar/63bdb0ac93b10.jpg` | 97,1 KB | Foto demo untuk resep Sambal Goreng Kentang |
+| `recipes/rendang-daging-sapi.webp` | `kel_kategori/gambar/63bc37e4b0b30.png` | 117,5 KB | Foto demo untuk resep Rendang Daging Sapi |
+| `recipes/ikan-tongkol-balado.webp` | `kel_kategori/gambar/63c2b1a7dae85.jpeg` | 118,0 KB | Foto demo untuk resep Ikan Tongkol Balado |
+| `recipes/gado-gado-sayur.webp` | `kel_kategori/gambar/63bc36e46b9b6.png` | 108,2 KB | Foto demo untuk resep Gado-Gado Sayur |
+| `recipes/tumis-kangkung-tempe.webp` | `kel_resep/img/63b548353db73.jpg` | 99,5 KB | Foto demo untuk resep Tumis Kangkung Tempe |
+| `recipes/salad-buah-yogurt.webp` | `kel_kategori/gambar/63bc37980b3a6.png` | 67,2 KB | Foto demo untuk resep Salad Buah Yogurt |
+| `recipes/sup-ayam-jagung.webp` | `kel_kategori/gambar/63bc37b94a70e.png` | 106,3 KB | Foto demo untuk resep Sup Ayam Jagung |
+| `recipes/es-buah-campur.webp` | `kel_resep/img/63be3997f27b0.jpg` | 59,4 KB | Foto demo untuk resep Es Buah Campur |
+| `recipes/mangga-saus-santan.webp` | `Homepage/img/6. Olohan Buah.png` | 44,8 KB | Foto demo untuk resep Mangga Saus Santan |
+| `recipes/rujak-pepaya-muda.webp` | `kel_kategori/gambar/63bc3751e3d3a.png` | 107,3 KB | Foto demo untuk resep Rujak Pepaya Muda |
+| `recipes/nasi-goreng-kampung.webp` | `bagi_Resep/img/63ba837a98a7f.jpg` | 110,1 KB | Foto demo untuk resep Nasi Goreng Kampung |
+| `recipes/telur-dadar-padang.webp` | `Homepage/img/Makanan.png` | 109,4 KB | Foto demo untuk resep Telur Dadar Padang |
+
+### 9.4 Avatar (256×256)
+
+| Aset | Sumber | Ukuran | Alt |
+| --- | --- | --- | --- |
+| `/media/avatars/default.webp` | `UserProfil/default.jpg` | 1,6 KB | Avatar default |
+| `/media/avatars/preset-1.webp` | `UserProfil/63bcc56c47f24.png` | 25,4 KB | Avatar preset 1 |
+| `/media/avatars/preset-2.webp` | `UserProfil/63be6e8185349.jpeg` | 13,7 KB | Avatar preset 2 |
+| `/media/avatars/preset-3.webp` | `UserProfil/63be6e949de38.png` | 3,6 KB | Avatar preset 3 |
+
+### 9.5 Aturan
+
+1. File asli tetap di `legacy/`; checksum tidak berubah.
+2. Turunan WebP diberi nama deskriptif berbasis slug, bukan hash.
+3. Setiap gambar punya `alt` yang dicatat pada tabel di atas.
+4. Tidak menambah foto stok atau hasil generate.
 5. Ukuran target: tile ≤ 40 KB, kartu resep ≤ 120 KB, hero ≤ 250 KB.
 6. Aset yang tidak terpakai tidak disalin ke `frontend/`.
+7. Lisensi foto tetap **UNKNOWN**; publikasi menunggu konfirmasi hak pakai.
+
+## 10. Verifikasi
+
+| Pemeriksaan | Hasil |
+| --- | --- |
+| Berkas media | 38 (3 brand, 7 kategori, 24 resep, 4 avatar) |
+| Total ukuran media | 2,4 MB (legacy 38,5 MB) |
+| Batas ukuran | Semua kategori ≤ 40 KB, resep ≤ 120 KB, hero ≤ 250 KB |
+| Dimensi | Kategori 400×400, resep 1200×900, avatar 256×256 |
+| Duplikat berkas | 0 (setiap nama unik; sumber boleh sama dengan crop berbeda) |
+| Idempotensi | Hash seluruh berkas identik setelah skrip dijalankan ulang |
+| Referensi fixture | 24 resep, 7 kategori, avatar pengguna/tim tersedia |
