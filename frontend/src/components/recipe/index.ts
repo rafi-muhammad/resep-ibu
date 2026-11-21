@@ -1,3 +1,5 @@
+export { IngredientList, type IngredientListProps } from './ingredient-list'
 export { RecipeCard, type RecipeCardProps } from './recipe-card'
 export { RecipeFilters, type RecipeFiltersProps } from './recipe-filters'
 export { RecipeGrid, type RecipeGridProps } from './recipe-grid'
+export { StepList, type StepListProps } from './step-list'

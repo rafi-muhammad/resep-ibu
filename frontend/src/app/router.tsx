@@ -11,7 +11,7 @@ import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
 import { ProtectedRoute } from '@/features/auth'
 import { HomePage } from '@/features/home'
-import { PopularRecipesPage, RecipeListPage } from '@/features/recipes'
+import { PopularRecipesPage, RecipeDetailPage, RecipeListPage } from '@/features/recipes'
 
 import { AdminRoute } from './admin-route'
 import { RouteErrorBoundary } from './error-boundary'
@@ -46,13 +46,7 @@ export const routes: RouteObject[] = [
           },
           {
             path: 'resep/:slug',
-            element: (
-              <PlaceholderPage
-                eyebrow="Detail"
-                title="Detail resep"
-                description="Bahan, langkah memasak, dan cerita di balik resep."
-              />
-            ),
+            element: <RecipeDetailPage />,
           },
           {
             path: 'kategori',
