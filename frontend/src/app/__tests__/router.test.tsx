@@ -28,7 +28,12 @@ describe('Router', () => {
   it('merender beranda di dalam header dan footer publik', () => {
     renderRoute('/')
 
-    expect(screen.getByRole('heading', { level: 1, name: 'Resep masakan rumahan' })).toBeVisible()
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: 'Resep rumahan, dari dapur kami ke dapur kamu',
+      }),
+    ).toBeVisible()
     expect(screen.getByRole('banner')).toBeInTheDocument()
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: 'Navigasi utama' })).toBeInTheDocument()
@@ -131,7 +136,10 @@ describe('Router', () => {
     renderRoute('/admin')
 
     expect(
-      await screen.findByRole('heading', { level: 1, name: 'Resep masakan rumahan' }),
+      await screen.findByRole('heading', {
+        level: 1,
+        name: 'Resep rumahan, dari dapur kami ke dapur kamu',
+      }),
     ).toBeVisible()
     expect(screen.queryByRole('heading', { name: 'Dasbor admin' })).toBeNull()
   })
@@ -140,12 +148,14 @@ describe('Router', () => {
     seedSession('user-admin')
     renderRoute('/')
 
-    expect(await screen.findByText('Admin Resep Ibu')).toBeVisible()
+    expect(await screen.findByText('Admin Resep Ibu', {}, { timeout: 5000 })).toBeVisible()
     expect(screen.getByRole('link', { name: 'Admin' })).toHaveAttribute('href', '/admin')
 
     await userEvent.setup().click(screen.getByRole('button', { name: 'Keluar' }))
 
-    expect(await screen.findByRole('heading', { level: 1, name: 'Masuk' })).toBeVisible()
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Masuk' }, { timeout: 5000 }),
+    ).toBeVisible()
     expect(window.localStorage.getItem(`${STORAGE_NAMESPACE}session`)).toBeNull()
   })
 

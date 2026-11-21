@@ -9,6 +9,7 @@ export interface RecipeGridProps {
   categories?: Category[]
   loading?: boolean
   skeletonCount?: number
+  variant?: 'default' | 'compact'
   className?: string
 }
 
@@ -36,6 +37,7 @@ export function RecipeGrid({
   categories = [],
   loading = false,
   skeletonCount = 6,
+  variant = 'default',
   className,
 }: RecipeGridProps) {
   const categoryById = new Map(categories.map((category) => [category.id, category]))
@@ -51,6 +53,7 @@ export function RecipeGrid({
               key={recipe.id}
               recipe={recipe}
               category={categoryById.get(recipe.categoryId)}
+              variant={variant}
             />
           ))}
     </div>

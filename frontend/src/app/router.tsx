@@ -10,6 +10,7 @@ import {
 import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
 import { ProtectedRoute } from '@/features/auth'
+import { HomePage } from '@/features/home'
 import { PopularRecipesPage, RecipeListPage } from '@/features/recipes'
 
 import { AdminRoute } from './admin-route'
@@ -33,13 +34,7 @@ export const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: (
-              <PlaceholderPage
-                eyebrow="Beranda"
-                title="Resep masakan rumahan"
-                description="Temukan inspirasi masakan sehari-hari untuk keluarga."
-              />
-            ),
+            element: <HomePage />,
           },
           {
             path: 'resep',

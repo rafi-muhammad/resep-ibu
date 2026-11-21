@@ -8,18 +8,24 @@ import { cn } from '@/lib/cn'
 export interface RecipeCardProps {
   recipe: Recipe
   category?: Category
+  /** `compact` dipakai rail 5 kartu di beranda; tanpa ringkasan dan CTA. */
+  variant?: 'default' | 'compact'
   className?: string
 }
 
-export function RecipeCard({ recipe, category, className }: RecipeCardProps) {
+export function RecipeCard({ recipe, category, variant = 'default', className }: RecipeCardProps) {
   const totalMinutes = recipe.prepMinutes + recipe.cookMinutes
+  const compact = variant === 'compact'
 
   return (
     <Card
       as="article"
       padding="none"
       interactive
-      className={cn('group h-full overflow-hidden shadow-sm', className)}
+      className={cn(
+        'group h-full overflow-hidden shadow-sm transition-[transform,box-shadow] duration-base hover:-translate-y-0.5 motion-reduce:hover:translate-y-0',
+        className,
+      )}
     >
       <Link
         to={`/resep/${recipe.slug}`}
@@ -32,27 +38,37 @@ export function RecipeCard({ recipe, category, className }: RecipeCardProps) {
             width={1200}
             height={900}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-base group-hover:scale-[1.02]"
+            className="h-full w-full object-cover transition-transform duration-base group-hover:scale-[1.02] motion-reduce:group-hover:scale-100"
           />
         </div>
 
-        <div className="flex flex-1 flex-col gap-3 p-5">
+        <div className={cn('flex flex-1 flex-col gap-3', compact ? 'p-4' : 'p-5')}>
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="neutral">{category?.name ?? 'Resep'}</Badge>
             <span className="inline-flex items-center gap-1 text-small text-muted">
               <Clock aria-hidden="true" className="h-4 w-4" />
               {totalMinutes > 0 ? `${totalMinutes} menit` : 'Tanpa masak'}
             </span>
-            <span className="inline-flex items-center gap-1 text-small text-muted">
-              <Users aria-hidden="true" className="h-4 w-4" />
-              {recipe.servings} porsi
-            </span>
+            {compact ? null : (
+              <span className="inline-flex items-center gap-1 text-small text-muted">
+                <Users aria-hidden="true" className="h-4 w-4" />
+                {recipe.servings} porsi
+              </span>
+            )}
           </div>
 
-          <h3 className="line-clamp-2 text-h3 text-brown">{recipe.title}</h3>
-          <p className="line-clamp-2 text-small text-muted">{recipe.excerpt}</p>
+          <h3
+            className={cn('line-clamp-2 text-brown', compact ? 'text-base font-bold' : 'text-h3')}
+          >
+            {recipe.title}
+          </h3>
 
-          <p className="mt-auto text-small font-bold text-brown">Lihat resep</p>
+          {compact ? null : (
+            <>
+              <p className="line-clamp-2 text-small text-muted">{recipe.excerpt}</p>
+              <p className="mt-auto text-small font-bold text-brown">Lihat resep</p>
+            </>
+          )}
         </div>
       </Link>
     </Card>
