@@ -57,11 +57,10 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 | `RecipeCard` | Kartu resep | `recipe`, `category`, `variant: default\|compact` | M2-01 |
 | `RecipeGrid` | Grid responsif | `recipes`, `categories`, `loading`, `skeletonCount`, `variant` | M2-01 |
 | `RecipeFilters` | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback | M2-01 |
-| `RecipeMeta` | Waktu, porsi, kesulitan | `recipe` | M2-03 |
-| `IngredientList` | Bahan terkelompok | `groups: IngredientGroup[]` | M2-03 |
-| `StepList` | Langkah bernomor | `steps: string[]` | M2-03 |
-| `SaveButton` | Simpan/lepas | `recipeId`, `saved`, `onToggle` | M2-03 |
-| `ShareButton` | Salin tautan | `url`, `title` | M2-03 |
+| `IngredientList` | Bahan terkelompok, list semantik | `groups: IngredientGroup[]` | M2-03 |
+| `StepList` | Langkah bernomor, `<ol>` | `steps: string[]` | M2-03 |
+| `SaveRecipeButton` | Simpan/lepas dengan `aria-pressed` | `saved`, `busy`, `disabled`, `onToggle` | M2-03 |
+| `ShareRecipeButton` | Salin tautan dengan fallback | `onCopy` | M2-03 |
 | `CategoryTile` | Tile kategori | `category` | M2-02 |
 | `CategoryHero` | Header kategori | `category` | M2-04 |
 | `RecipeFilters` | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback | M2-01 |
