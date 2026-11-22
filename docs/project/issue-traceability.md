@@ -7,7 +7,7 @@
 | Baseline commit | `4eb2c466c58c1e2a55d938fc925fb31ea442edcd` |
 | Jumlah issue | 24 |
 | Milestone | M0–M5 |
-| Status | M0 dan M1 selesai; M2 berjalan (3/5) |
+| Status | M0 dan M1 selesai; M2 berjalan (4/5) |
 
 ## 1. Peta issue
 
@@ -25,7 +25,7 @@
 | M2-01 | [#10](https://github.com/rafi-muhammad/resep-ibu/issues/10) | Daftar resep, search, filter, pagination, populer | M2 | #5, #6, #7, #9 | **CLOSED** |
 | M2-02 | [#11](https://github.com/rafi-muhammad/resep-ibu/issues/11) | Beranda | M2 | #8, #10 | **CLOSED** |
 | M2-03 | [#12](https://github.com/rafi-muhammad/resep-ibu/issues/12) | Detail resep | M2 | #8, #10 | **CLOSED** |
-| M2-04 | [#13](https://github.com/rafi-muhammad/resep-ibu/issues/13) | Indeks dan detail kategori | M2 | #9, #10 | OPEN |
+| M2-04 | [#13](https://github.com/rafi-muhammad/resep-ibu/issues/13) | Indeks dan detail kategori | M2 | #9, #10 | **CLOSED** |
 | M2-05 | [#14](https://github.com/rafi-muhammad/resep-ibu/issues/14) | Tentang Kami dan Kontak | M2 | #4, #6, #7, #9 | OPEN |
 | M3-01 | [#15](https://github.com/rafi-muhammad/resep-ibu/issues/15) | Login, registrasi, logout | M3 | #8 | OPEN |
 | M3-02 | [#16](https://github.com/rafi-muhammad/resep-ibu/issues/16) | Profil dan ubah password | M3 | #15 | OPEN |
@@ -79,7 +79,7 @@
 | --- | --- | --- | --- |
 | M0 — Baseline | 1 | 1 | Selesai |
 | M1 — Foundation | 2 | 8 | Selesai (8/8) |
-| M2 — Public Experience | 3 | 5 | Berjalan (3/5) |
+| M2 — Public Experience | 3 | 5 | Berjalan (4/5) |
 | M3 — Account & Contribution | 4 | 4 | Belum dimulai |
 | M4 — Admin | 5 | 3 | Belum dimulai |
 | M5 — QA & Handoff | 6 | 3 | Belum dimulai |
@@ -121,6 +121,7 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | `0d857c2` | M2-01: /resep dengan RecipeCard, pencarian debounce, filter, sort, pagination, /resep/populer, error state + 17 test (#10) |
 | `762416e` | M2-02: beranda foto-led, hero pencarian, statistik dari data, 5 populer, 7 kategori, 6 terbaru, CTA berbagi + 5 test (#11) |
 | `3094f23` | M2-03: detail resep dengan bahan terkelompok, langkah bernomor, simpan, salin tautan, resep terkait, 404 + 6 test (#12) |
+| `0022405` | M2-04: indeks 7 kategori, detail kategori dengan hitungan, grid 12 per halaman, 404, empty state + 6 test (#13) |
 
 ## 6. Verifikasi
 
@@ -144,23 +145,26 @@ Label bawaan `documentation` dan `accessibility` juga dipakai.
 | Issue #10 | CLOSED, alasan completed |
 | Issue #11 | CLOSED, alasan completed |
 | Issue #12 | CLOSED, alasan completed |
-| Commit implementasi terakhir | `3094f23` |
+| Issue #13 | CLOSED, alasan completed |
+| Commit implementasi terakhir | `0022405` |
 | Test data layer (#7) | 40 passed |
 | Test auth dan guard (#8) | 24 passed + 3 test router |
 | Test aset (#9) | 4 passed |
 | Test daftar resep (#10) | 17 passed (2 file: query dan integrasi halaman) |
 | Test beranda (#11) | 5 passed (hero, statistik, section, tautan, error lokal) |
 | Test detail resep (#12) | 6 passed (render lengkap, 404, tamu, simpan, salin, error retry) |
-| Total test | 175 passed (20 file) |
+| Test kategori (#13) | 6 passed (indeks, hitungan, error retry, detail, koreksi halaman, 404, empty state) |
+| Total test | 181 passed (21 file) |
 | Responsif daftar resep (#10) | Grid 1/2/3 kolom pada 390/768/1024/1440 px, tanpa overflow horizontal |
 | Responsif beranda (#11) | 390/768/1024/1440 px tanpa overflow horizontal (diukur lewat CDP) |
 | Responsif detail resep (#12) | 390/768/1024/1440 px tanpa overflow horizontal (diukur lewat CDP) |
+| Responsif kategori (#13) | Indeks dan detail 390/768/1024/1440 px tanpa overflow horizontal (diukur lewat CDP) |
 | Aset media (#9) | 38 berkas, 2,5 MB (legacy 40 MB) |
 | Batas ukuran aset (#9) | Kategori ≤ 40 KB, resep ≤ 120 KB, hero ≤ 250 KB |
 | Idempotensi skrip aset (#9) | Hash 38 berkas identik setelah dijalankan ulang |
 | Fixture demo (#7) | 24 resep, 7 kategori, 4 pengguna, 6 pesan, 3 tim |
 | Fixture diimpor komponen | 0 (hanya `src/lib/api` dan `src/mocks`) |
-| File terlacak | 340 |
+| File terlacak | 353 |
 | File terlarang di Git | 0 |
 | Fingerprint legacy | `e054d179...977212` (identik) |
 
