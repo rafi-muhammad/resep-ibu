@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import { Skeleton } from '@/components/ui'
 import type { Category } from '@/lib/api/types'
 
 export interface CategoryTileProps {
@@ -34,5 +35,17 @@ export function CategoryTile({ category }: CategoryTileProps) {
         />
       </div>
     </Link>
+  )
+}
+
+export function CategoryTileSkeleton() {
+  return (
+    <div className="overflow-hidden rounded-md border border-border bg-white shadow-sm">
+      <Skeleton rounded="sm" className="aspect-[16/10] w-full" />
+      <div className="flex flex-col gap-2 p-4">
+        <Skeleton width="60%" height={18} />
+        <Skeleton width="40%" height={14} />
+      </div>
+    </div>
   )
 }

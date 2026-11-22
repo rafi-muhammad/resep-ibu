@@ -10,6 +10,7 @@ import {
 import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
 import { ProtectedRoute } from '@/features/auth'
+import { CategoriesIndexPage, CategoryDetailPage } from '@/features/categories'
 import { HomePage } from '@/features/home'
 import { PopularRecipesPage, RecipeDetailPage, RecipeListPage } from '@/features/recipes'
 
@@ -50,23 +51,11 @@ export const routes: RouteObject[] = [
           },
           {
             path: 'kategori',
-            element: (
-              <PlaceholderPage
-                eyebrow="Kategori"
-                title="Semua kategori"
-                description="Pilih kategori masakan yang ingin dijelajahi."
-              />
-            ),
+            element: <CategoriesIndexPage />,
           },
           {
             path: 'kategori/:slug',
-            element: (
-              <PlaceholderPage
-                eyebrow="Kategori"
-                title="Resep per kategori"
-                description="Kumpulan resep dalam kategori ini."
-              />
-            ),
+            element: <CategoryDetailPage />,
           },
           {
             path: 'tentang',

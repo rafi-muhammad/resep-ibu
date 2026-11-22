@@ -100,7 +100,7 @@ describe('Router', () => {
     const dialog = screen.getByRole('dialog', { name: 'Menu navigasi' })
     await user.click(within(dialog).getByRole('link', { name: 'Kategori' }))
 
-    expect(await screen.findByRole('heading', { level: 1, name: 'Semua kategori' })).toBeVisible()
+    expect(await screen.findByRole('heading', { level: 1, name: 'Kategori' })).toBeVisible()
     expect(screen.queryByRole('dialog')).toBeNull()
   })
 

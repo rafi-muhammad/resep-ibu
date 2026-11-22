@@ -1,28 +1,15 @@
 import { UtensilsCrossed } from 'lucide-react'
 
-import { RecipeGrid } from '@/components/recipe'
-import { EmptyState, ErrorState, LinkButton, SectionHeader, Skeleton } from '@/components/ui'
+import { CategoryTile, CategoryTileSkeleton, RecipeGrid } from '@/components/recipe'
+import { EmptyState, ErrorState, LinkButton, SectionHeader } from '@/components/ui'
 import { useCategories } from '@/features/categories/use-categories'
 import type { RecipeListParams } from '@/features/recipes'
 import { useRecipeList } from '@/features/recipes'
 
-import { CategoryTile } from './category-tile'
 import { HomeHero } from './home-hero'
 
 const POPULAR_PARAMS: RecipeListParams = { q: '', category: '', sort: 'populer', page: 1 }
 const LATEST_PARAMS: RecipeListParams = { q: '', category: '', sort: 'terbaru', page: 1 }
-
-function CategoryTileSkeleton() {
-  return (
-    <div className="overflow-hidden rounded-md border border-border bg-white shadow-sm">
-      <Skeleton rounded="sm" className="aspect-[16/10] w-full" />
-      <div className="flex flex-col gap-2 p-4">
-        <Skeleton width="60%" height={18} />
-        <Skeleton width="40%" height={14} />
-      </div>
-    </div>
-  )
-}
 
 export function HomePage() {
   const popular = useRecipeList(POPULAR_PARAMS, 5)

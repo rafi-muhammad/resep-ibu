@@ -1,3 +1,5 @@
+export { CategoryHero, type CategoryHeroProps } from './category-hero'
+export { CategoryTile, CategoryTileSkeleton, type CategoryTileProps } from './category-tile'
 export { IngredientList, type IngredientListProps } from './ingredient-list'
 export { RecipeCard, type RecipeCardProps } from './recipe-card'
 export { RecipeFilters, type RecipeFiltersProps } from './recipe-filters'
