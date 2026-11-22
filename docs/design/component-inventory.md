@@ -71,6 +71,14 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 | --- | --- | --- | --- |
 | `HomeHero` | Hero foto-led, pencarian, statistik | `featured`, `featuredCategory`, `recipeTotal`, `categoryTotal` | M2-02 |
 
+### Konten publik (`src/features/content`)
+
+| Modul | Tujuan | Issue |
+| --- | --- | --- |
+| `AboutPage` | Cerita, nilai, tim placeholder, dan CTA kontak | M2-05 |
+| `ContactPage` | Form kontak demo dengan validasi inline dan state sukses | M2-05 |
+| `validateContact` | Aturan validasi nama, email, subjek, pesan, persetujuan | M2-05 |
+
 ## 4. Akun dan kontribusi (`src/features/*/components`)
 
 | Komponen | Tujuan | Issue |
