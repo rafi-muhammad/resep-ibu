@@ -11,6 +11,7 @@ import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
 import { ProtectedRoute } from '@/features/auth'
 import { CategoriesIndexPage, CategoryDetailPage } from '@/features/categories'
+import { AboutPage, ContactPage } from '@/features/content'
 import { HomePage } from '@/features/home'
 import { PopularRecipesPage, RecipeDetailPage, RecipeListPage } from '@/features/recipes'
 
@@ -59,23 +60,11 @@ export const routes: RouteObject[] = [
           },
           {
             path: 'tentang',
-            element: (
-              <PlaceholderPage
-                eyebrow="Tentang"
-                title="Tentang Resep Ibu"
-                description="Cerita dan nilai di balik situs resep ini."
-              />
-            ),
+            element: <AboutPage />,
           },
           {
             path: 'kontak',
-            element: (
-              <PlaceholderPage
-                eyebrow="Kontak"
-                title="Hubungi kami"
-                description="Kirim pertanyaan atau masukan lewat formulir kontak."
-              />
-            ),
+            element: <ContactPage />,
           },
           { path: '*', element: <NotFoundPage /> },
         ],
