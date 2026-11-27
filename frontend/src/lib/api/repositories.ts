@@ -141,6 +141,8 @@ export interface AuthRepository {
   register(input: RegisterInput): Promise<User>
   logout(): Promise<void>
   getSession(): Promise<User | null>
+  updateProfile(input: UpdateProfileInput): Promise<User>
+  changePassword(currentPassword: string, newPassword: string): Promise<void>
 }
 
 export interface Repositories {

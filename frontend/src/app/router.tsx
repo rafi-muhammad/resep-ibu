@@ -10,6 +10,7 @@ import {
 import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
 import { LoginPage, ProtectedRoute, RegisterPage } from '@/features/auth'
+import { PasswordPage, ProfilePage } from '@/features/account'
 import { CategoriesIndexPage, CategoryDetailPage } from '@/features/categories'
 import { AboutPage, ContactPage } from '@/features/content'
 import { HomePage } from '@/features/home'
@@ -91,23 +92,11 @@ export const routes: RouteObject[] = [
         children: [
           {
             path: 'profil',
-            element: (
-              <PlaceholderPage
-                eyebrow="Akun"
-                title="Profil saya"
-                description="Data akun dan ringkasan aktivitas."
-              />
-            ),
+            element: <ProfilePage />,
           },
           {
             path: 'profil/keamanan',
-            element: (
-              <PlaceholderPage
-                eyebrow="Akun"
-                title="Keamanan akun"
-                description="Ubah kata sandi akun demo."
-              />
-            ),
+            element: <PasswordPage />,
           },
           {
             path: 'profil/resep',

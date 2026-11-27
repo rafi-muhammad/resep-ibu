@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 
-import { repositories, type AuthRepository } from '@/lib/api'
+import { repositories, type AuthRepository, type UpdateProfileInput } from '@/lib/api'
 import type { User } from '@/lib/api/types'
 
 import { AuthContext, type AuthContextValue, type AuthStatus } from './auth-context'
@@ -62,9 +62,34 @@ export function AuthProvider({ children, auth = repositories.auth }: AuthProvide
     setStatus('anonymous')
   }, [auth])
 
+  const updateProfile = useCallback(
+    async (input: UpdateProfileInput) => {
+      const updated = await auth.updateProfile(input)
+      setUser(updated)
+      return updated
+    },
+    [auth],
+  )
+
+  const changePassword = useCallback(
+    async (currentPassword: string, newPassword: string) => {
+      await auth.changePassword(currentPassword, newPassword)
+    },
+    [auth],
+  )
+
   const value = useMemo<AuthContextValue>(
-    () => ({ user, status, isDemo: true, login, register, logout }),
-    [user, status, login, register, logout],
+    () => ({
+      user,
+      status,
+      isDemo: true,
+      login,
+      register,
+      logout,
+      updateProfile,
+      changePassword,
+    }),
+    [user, status, login, register, logout, updateProfile, changePassword],
   )
 
   return <AuthContext value={value}>{children}</AuthContext>

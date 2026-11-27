@@ -224,6 +224,12 @@ describe('AuthProvider tanpa sesi', () => {
       getSession: async () => {
         throw new Error('rusak')
       },
+      updateProfile: async () => {
+        throw new Error('tidak dipakai')
+      },
+      changePassword: async () => {
+        throw new Error('tidak dipakai')
+      },
     }
 
     render(

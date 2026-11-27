@@ -45,7 +45,9 @@ export function UserMenu({ user, onLogout }: UserMenuProps) {
         className="inline-flex min-h-11 items-center gap-2 rounded-sm px-2 text-small font-bold text-brown hover:bg-surface/60"
       >
         <Avatar name={user.name} size="sm" />
-        <span>{user.name}</span>
+        <span className="hidden max-w-32 truncate xl:inline" title={user.name}>
+          {user.name}
+        </span>
       </Link>
       {onLogout ? (
         <button

@@ -7,6 +7,7 @@ import type { User } from '../types'
 import { hashPassword } from './hash'
 import { simulateLatency } from './latency'
 import type { DemoStore, SessionState } from './store'
+import { createUserRepository } from './user-repository'
 import { createId, nowIso } from './utils'
 
 export { DEMO_PASSWORD }
@@ -107,6 +108,47 @@ export function createAuthRepository(store: DemoStore): AuthRepository {
     async logout() {
       await simulateLatency()
       endSession()
+    },
+
+    async updateProfile(input) {
+      const session = store.read('session', null)
+      if (!session) throw new ApiError('UNAUTHORIZED', 'Sesi tidak ditemukan.')
+
+      // Validasi email unik dan penulisan pengguna tetap satu sumber: user repository.
+      return createUserRepository(store).updateProfile(session.userId, input)
+    },
+
+    async changePassword(currentPassword: string, newPassword: string) {
+      await simulateLatency()
+
+      const session = store.read('session', null)
+      if (!session) throw new ApiError('UNAUTHORIZED', 'Sesi tidak ditemukan.')
+
+      const credentials = readCredentials()
+      const currentHash = credentials[session.userId]
+
+      if (!currentHash || currentHash !== hashPassword(currentPassword)) {
+        throw new ApiError('UNAUTHORIZED', 'Kata sandi saat ini salah.', {
+          currentPassword: 'Kata sandi saat ini salah.',
+        })
+      }
+
+      if (newPassword.length < 8) {
+        throw new ApiError('VALIDATION', 'Kata sandi baru minimal 8 karakter.', {
+          newPassword: 'Kata sandi baru minimal 8 karakter.',
+        })
+      }
+
+      if (newPassword === currentPassword) {
+        throw new ApiError('VALIDATION', 'Kata sandi baru harus berbeda dari yang sekarang.', {
+          newPassword: 'Kata sandi baru harus berbeda dari yang sekarang.',
+        })
+      }
+
+      store.write('credentials', {
+        ...credentials,
+        [session.userId]: hashPassword(newPassword),
+      })
     },
 
     async getSession() {

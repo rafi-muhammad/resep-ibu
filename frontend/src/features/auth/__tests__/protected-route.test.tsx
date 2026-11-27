@@ -108,6 +108,12 @@ describe('ProtectedRoute', () => {
       },
       logout: async () => {},
       getSession: () => new Promise<never>(() => {}),
+      updateProfile: async () => {
+        throw new Error('tidak dipakai')
+      },
+      changePassword: async () => {
+        throw new Error('tidak dipakai')
+      },
     }
 
     renderGuarded('/profil', auth)
