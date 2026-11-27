@@ -4,133 +4,143 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 
 ## 1. Primitif (`src/components/ui`)
 
-| Komponen | Tujuan | Varian / Props penting | State | Dipakai di | Issue |
-| --- | --- | --- | --- | --- | --- |
-| `Button` | Aksi utama | `variant: primary\|secondary\|ghost\|danger`, `size: sm\|md\|lg`, `loading`, `disabled`, `fullWidth` | hover, focus, active, loading, disabled | seluruh aplikasi | M1-03 |
-| `IconButton` | Aksi ikon | `label` wajib, `icon`, `variant`, `size` | sama seperti Button | tabel, header, dialog | M1-03 |
-| `LinkButton` | Navigasi bergaya tombol | `to`, `variant`, `size` | hover, focus | hero, empty state | M1-03 |
-| `Input` | Input teks | `type`, `invalid`, `size` | focus, invalid, disabled | form | M1-03 |
-| `Textarea` | Teks panjang | `rows`, `invalid`, `maxLength` | focus, invalid | kontak, bagikan, admin | M1-03 |
-| `Select` | Pilihan tunggal | `options`, `placeholder`, `invalid` | focus, invalid | filter, form | M1-03 |
-| `Checkbox` | Persetujuan | `label`, `description`, `invalid` | checked, focus | auth, kontak | M1-03 |
-| `FileInput` | Pilih foto | `accept`, `maxSize`, `onFile` | drag-over, invalid | bagikan | M1-03 |
-| `FormField` | Label + kontrol + pesan | `label`, `htmlFor`, `error`, `hint`, `required` | error | semua form | M1-03 |
-| `SearchField` | Input pencarian | `value`, `onSubmit`, `placeholder` | focus, filled | header, `/resep`, admin | M1-03 |
-| `Badge` | Label status/kategori | `tone: neutral\|accent\|success\|danger`, `size` | — | kartu, tabel | M1-03 |
-| `FilterChip` | Filter kategori | `selected`, `onToggle` | selected, focus | `/resep` | M1-03 |
-| `Avatar` | Foto pengguna | `src`, `name`, `size`, `fallback` | error fallback | header, profil, admin | M1-03 |
-| `Alert` | Pesan inline | `tone: info\|success\|warning\|danger`, `title`, `children` | — | form, error lokal | M1-03 |
-| `Toast` / `ToastProvider` | Notifikasi singkat | `tone`, `duration`, `action` | enter/exit | global | M1-03 |
-| `Skeleton` | Placeholder loading | `width`, `height`, `rounded` | pulse | daftar, detail | M1-03 |
-| `Spinner` | Indikator proses | `size`, `label` | spin | tombol, halaman | M1-03 |
-| `EmptyState` | Kondisi kosong | `icon`, `title`, `description`, `action` | — | semua daftar | M1-03 |
-| `ErrorState` | Error lokal dengan retry | `title`, `description`, `onRetry`, `retryLabel` | — | daftar, panel | M2-01 |
-| `Dialog` | Panel modal | `open`, `onClose`, `title`, `size` | open, focus trap | konfirmasi, form admin | M1-03 |
-| `ConfirmDialog` | Konfirmasi destruktif | `title`, `description`, `confirmLabel`, `tone` | pending | hapus, ubah status | M1-03 |
-| `Pagination` | Navigasi halaman | `page`, `totalPages`, `onChange` | disabled prev/next | `/resep`, kategori | M1-03 |
-| `Breadcrumbs` | Jejak navigasi | `items: { label, to? }[]` | — | detail, kategori | M1-03 |
-| `PageHeader` | Judul + deskripsi + aksi | `title`, `description`, `actions` | — | halaman publik | M1-03 |
-| `SectionHeader` | Judul section + tautan | `title`, `action` | — | beranda | M1-03 |
-| `Card` | Wadah dasar | `as`, `padding`, `interactive` | hover | seluruh aplikasi | M1-03 |
+| Komponen                  | Tujuan                   | Varian / Props penting                                                                               | State                                   | Dipakai di              | Issue |
+| ------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------- | --------------------------------------- | ----------------------- | ----- |
+| `Button`                  | Aksi utama               | `variant: primary\|secondary\|ghost\|danger`, `size: sm\|md\|lg`, `loading`, `disabled`, `fullWidth` | hover, focus, active, loading, disabled | seluruh aplikasi        | M1-03 |
+| `IconButton`              | Aksi ikon                | `label` wajib, `icon`, `variant`, `size`                                                             | sama seperti Button                     | tabel, header, dialog   | M1-03 |
+| `LinkButton`              | Navigasi bergaya tombol  | `to`, `variant`, `size`                                                                              | hover, focus                            | hero, empty state       | M1-03 |
+| `Input`                   | Input teks               | `type`, `invalid`, `size`                                                                            | focus, invalid, disabled                | form                    | M1-03 |
+| `Textarea`                | Teks panjang             | `rows`, `invalid`, `maxLength`                                                                       | focus, invalid                          | kontak, bagikan, admin  | M1-03 |
+| `Select`                  | Pilihan tunggal          | `options`, `placeholder`, `invalid`                                                                  | focus, invalid                          | filter, form            | M1-03 |
+| `Checkbox`                | Persetujuan              | `label`, `description`, `invalid`                                                                    | checked, focus                          | auth, kontak            | M1-03 |
+| `FileInput`               | Pilih foto               | `accept`, `maxSize`, `onFile`                                                                        | drag-over, invalid                      | bagikan                 | M1-03 |
+| `FormField`               | Label + kontrol + pesan  | `label`, `htmlFor`, `error`, `hint`, `required`                                                      | error                                   | semua form              | M1-03 |
+| `SearchField`             | Input pencarian          | `value`, `onSubmit`, `placeholder`                                                                   | focus, filled                           | header, `/resep`, admin | M1-03 |
+| `Badge`                   | Label status/kategori    | `tone: neutral\|accent\|success\|danger`, `size`                                                     | —                                       | kartu, tabel            | M1-03 |
+| `FilterChip`              | Filter kategori          | `selected`, `onToggle`                                                                               | selected, focus                         | `/resep`                | M1-03 |
+| `Avatar`                  | Foto pengguna            | `src`, `name`, `size`, `fallback`                                                                    | error fallback                          | header, profil, admin   | M1-03 |
+| `Alert`                   | Pesan inline             | `tone: info\|success\|warning\|danger`, `title`, `children`                                          | —                                       | form, error lokal       | M1-03 |
+| `Toast` / `ToastProvider` | Notifikasi singkat       | `tone`, `duration`, `action`                                                                         | enter/exit                              | global                  | M1-03 |
+| `Skeleton`                | Placeholder loading      | `width`, `height`, `rounded`                                                                         | pulse                                   | daftar, detail          | M1-03 |
+| `Spinner`                 | Indikator proses         | `size`, `label`                                                                                      | spin                                    | tombol, halaman         | M1-03 |
+| `EmptyState`              | Kondisi kosong           | `icon`, `title`, `description`, `action`                                                             | —                                       | semua daftar            | M1-03 |
+| `ErrorState`              | Error lokal dengan retry | `title`, `description`, `onRetry`, `retryLabel`                                                      | —                                       | daftar, panel           | M2-01 |
+| `Dialog`                  | Panel modal              | `open`, `onClose`, `title`, `size`                                                                   | open, focus trap                        | konfirmasi, form admin  | M1-03 |
+| `ConfirmDialog`           | Konfirmasi destruktif    | `title`, `description`, `confirmLabel`, `tone`                                                       | pending                                 | hapus, ubah status      | M1-03 |
+| `Pagination`              | Navigasi halaman         | `page`, `totalPages`, `onChange`                                                                     | disabled prev/next                      | `/resep`, kategori      | M1-03 |
+| `Breadcrumbs`             | Jejak navigasi           | `items: { label, to? }[]`                                                                            | —                                       | detail, kategori        | M1-03 |
+| `PageHeader`              | Judul + deskripsi + aksi | `title`, `description`, `actions`                                                                    | —                                       | halaman publik          | M1-03 |
+| `SectionHeader`           | Judul section + tautan   | `title`, `action`                                                                                    | —                                       | beranda                 | M1-03 |
+| `Card`                    | Wadah dasar              | `as`, `padding`, `interactive`                                                                       | hover                                   | seluruh aplikasi        | M1-03 |
 
 ## 2. Layout (`src/components/layout`)
 
-| Komponen | Tujuan | Catatan | Issue |
-| --- | --- | --- | --- |
-| `Container` | Lebar dan gutter konsisten | maks 1200 px | M1-05 |
-| `SiteHeader` | Header publik | logo, nav, search, akun | M1-05 |
-| `DesktopNav` | Navigasi ≥1024 | tautan aktif | M1-05 |
-| `MobileNav` | Drawer <1024 | focus trap, Esc, scroll lock | M1-05 |
-| `UserMenu` | Menu akun | profil, resep saya, admin jika role, logout | M1-05 |
-| `SiteFooter` | Footer publik | logo, tautan, copyright | M1-05 |
-| `AuthLayout` | Layout login/registrasi | split, motif mangkuk | M1-05 |
-| `AccountLayout` | Sidebar akun | 4 tautan | M1-05 |
-| `AdminShell` | Kerangka admin | sidebar + header + main | M1-05 |
-| `AdminSidebar` | Navigasi admin | drawer di mobile | M1-05 |
-| `SkipLink` | Aksesibilitas | target `#main` | M1-05 |
-| `ScrollToTop` | Reset scroll | hormati `prefers-reduced-motion` | M1-05 |
+| Komponen        | Tujuan                     | Catatan                                     | Issue |
+| --------------- | -------------------------- | ------------------------------------------- | ----- |
+| `Container`     | Lebar dan gutter konsisten | maks 1200 px                                | M1-05 |
+| `SiteHeader`    | Header publik              | logo, nav, search, akun                     | M1-05 |
+| `DesktopNav`    | Navigasi ≥1024             | tautan aktif                                | M1-05 |
+| `MobileNav`     | Drawer <1024               | focus trap, Esc, scroll lock                | M1-05 |
+| `UserMenu`      | Menu akun                  | profil, resep saya, admin jika role, logout | M1-05 |
+| `SiteFooter`    | Footer publik              | logo, tautan, copyright                     | M1-05 |
+| `AuthLayout`    | Layout login/registrasi    | split, motif mangkuk                        | M1-05 |
+| `AccountLayout` | Sidebar akun               | 4 tautan                                    | M1-05 |
+| `AdminShell`    | Kerangka admin             | sidebar + header + main                     | M1-05 |
+| `AdminSidebar`  | Navigasi admin             | drawer di mobile                            | M1-05 |
+| `SkipLink`      | Aksesibilitas              | target `#main`                              | M1-05 |
+| `ScrollToTop`   | Reset scroll               | hormati `prefers-reduced-motion`            | M1-05 |
 
 ## 3. Domain resep (`src/components/recipe`)
 
-| Komponen | Tujuan | Props | Issue |
-| --- | --- | --- | --- |
-| `RecipeCard` | Kartu resep | `recipe`, `category`, `variant: default\|compact` | M2-01 |
-| `RecipeGrid` | Grid responsif | `recipes`, `categories`, `loading`, `skeletonCount`, `variant` | M2-01 |
-| `RecipeFilters` | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback | M2-01 |
-| `IngredientList` | Bahan terkelompok, list semantik | `groups: IngredientGroup[]` | M2-03 |
-| `StepList` | Langkah bernomor, `<ol>` | `steps: string[]` | M2-03 |
-| `SaveRecipeButton` | Simpan/lepas dengan `aria-pressed` | `saved`, `busy`, `disabled`, `onToggle` | M2-03 |
-| `ShareRecipeButton` | Salin tautan dengan fallback | `onCopy` | M2-03 |
-| `CategoryTile` | Tile kategori | `category` | M2-02 |
-| `CategoryHero` | Header kategori | `category` | M2-04 |
-| `RecipeFilters` | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback | M2-01 |
+| Komponen            | Tujuan                                  | Props                                                          | Issue |
+| ------------------- | --------------------------------------- | -------------------------------------------------------------- | ----- |
+| `RecipeCard`        | Kartu resep                             | `recipe`, `category`, `variant: default\|compact`              | M2-01 |
+| `RecipeGrid`        | Grid responsif                          | `recipes`, `categories`, `loading`, `skeletonCount`, `variant` | M2-01 |
+| `RecipeFilters`     | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback                | M2-01 |
+| `IngredientList`    | Bahan terkelompok, list semantik        | `groups: IngredientGroup[]`                                    | M2-03 |
+| `StepList`          | Langkah bernomor, `<ol>`                | `steps: string[]`                                              | M2-03 |
+| `SaveRecipeButton`  | Simpan/lepas dengan `aria-pressed`      | `saved`, `busy`, `disabled`, `onToggle`                        | M2-03 |
+| `ShareRecipeButton` | Salin tautan dengan fallback            | `onCopy`                                                       | M2-03 |
+| `CategoryTile`      | Tile kategori                           | `category`                                                     | M2-02 |
+| `CategoryHero`      | Header kategori                         | `category`                                                     | M2-04 |
+| `RecipeFilters`     | Toolbar search, kategori, urutan, reset | `q`, `category`, `sort`, `categories`, callback                | M2-01 |
 
 ### Beranda (`src/features/home`)
 
-| Komponen | Tujuan | Props | Issue |
-| --- | --- | --- | --- |
+| Komponen   | Tujuan                              | Props                                                          | Issue |
+| ---------- | ----------------------------------- | -------------------------------------------------------------- | ----- |
 | `HomeHero` | Hero foto-led, pencarian, statistik | `featured`, `featuredCategory`, `recipeTotal`, `categoryTotal` | M2-02 |
 
 ### Konten publik (`src/features/content`)
 
-| Modul | Tujuan | Issue |
-| --- | --- | --- |
-| `AboutPage` | Cerita, nilai, tim placeholder, dan CTA kontak | M2-05 |
-| `ContactPage` | Form kontak demo dengan validasi inline dan state sukses | M2-05 |
-| `validateContact` | Aturan validasi nama, email, subjek, pesan, persetujuan | M2-05 |
+| Modul             | Tujuan                                                   | Issue |
+| ----------------- | -------------------------------------------------------- | ----- |
+| `AboutPage`       | Cerita, nilai, tim placeholder, dan CTA kontak           | M2-05 |
+| `ContactPage`     | Form kontak demo dengan validasi inline dan state sukses | M2-05 |
+| `validateContact` | Aturan validasi nama, email, subjek, pesan, persetujuan  | M2-05 |
+
+## 4. Autentikasi dan akun
 
 ### Autentikasi (`src/features/auth`)
 
-| Modul | Tujuan | Issue |
-| --- | --- | --- |
-| `LoginPage` | Form masuk, akun demo, dan returnTo aman | M3-01 |
-| `RegisterPage` | Form daftar dengan validasi dan konfirmasi | M3-01 |
-| `PasswordField` | Input kata sandi dengan tombol tampil/sembunyikan | M3-01 |
-| `DemoAccounts` | Kotak akun demo dengan isi otomatis | M3-01 |
-| `validateLogin`, `validateRegister` | Aturan validasi form autentikasi | M3-01 |
+| Modul                               | Tujuan                                            | Issue |
+| ----------------------------------- | ------------------------------------------------- | ----- |
+| `LoginPage`                         | Form masuk, akun demo, dan returnTo aman          | M3-01 |
+| `RegisterPage`                      | Form daftar dengan validasi dan konfirmasi        | M3-01 |
+| `PasswordField`                     | Input kata sandi dengan tombol tampil/sembunyikan | M3-01 |
+| `DemoAccounts`                      | Kotak akun demo dengan isi otomatis               | M3-01 |
+| `validateLogin`, `validateRegister` | Aturan validasi form autentikasi                  | M3-01 |
 
-## 4. Akun dan kontribusi (`src/features/*/components`)
+### Akun (`src/features/account`)
 
-| Komponen | Tujuan | Issue |
-| --- | --- | --- |
-| `PersonalDataForm` | Form profil | M3-02 |
-| `PasswordForm` | Form ubah password | M3-02 |
-| `AccountNav` | Navigasi sidebar akun | M3-02 |
-| `RecipeForm` | Form bagikan resep | M3-03 |
-| `IngredientRepeater` | Tambah/hapus bahan | M3-03 |
-| `StepRepeater` | Tambah/hapus langkah | M3-03 |
-| `ImagePreview` | Preview foto lokal | M3-03 |
-| `MyRecipeList` | Daftar resep user | M3-04 |
-| `SavedRecipeGrid` | Daftar resep disimpan | M3-04 |
+| Modul              | Tujuan                                                               | Issue |
+| ------------------ | -------------------------------------------------------------------- | ----- |
+| `ProfilePage`      | Form nama, email, bio, dan avatar preset dengan validasi serta toast | M3-02 |
+| `PasswordPage`     | Form ubah kata sandi dengan validasi dan penolakan kata sandi lama   | M3-02 |
+| `validateProfile`  | Aturan nama, email, bio 300 karakter, dan preset avatar              | M3-02 |
+| `validatePassword` | Aturan kata sandi saat ini, baru, dan konfirmasi                     | M3-02 |
+| `AVATAR_PRESETS`   | Empat avatar bawaan tanpa unggah berkas                              | M3-02 |
+| `AccountLayout`    | Sidebar empat tautan akun (sudah ada sejak M1)                       | M1-04 |
 
-## 5. Admin (`src/features/admin/components`)
+## 5. Kontribusi (`src/features/*/components`)
 
-| Komponen | Tujuan | Issue |
-| --- | --- | --- |
-| `StatCard` | Angka ringkasan | M4-01 |
-| `DataTable` | Tabel responsif | M4-01 |
-| `TableToolbar` | Search + filter | M4-01 |
-| `StatusToggle` | Aktif/non-aktif | M4-02 |
-| `RowActions` | Lihat/ubah/hapus | M4-01 |
-| `UserDetailDrawer` | Detail pengguna | M4-01 |
+| Komponen             | Tujuan                | Issue |
+| -------------------- | --------------------- | ----- |
+| `RecipeForm`         | Form bagikan resep    | M3-03 |
+| `IngredientRepeater` | Tambah/hapus bahan    | M3-03 |
+| `StepRepeater`       | Tambah/hapus langkah  | M3-03 |
+| `ImagePreview`       | Preview foto lokal    | M3-03 |
+| `MyRecipeList`       | Daftar resep user     | M3-04 |
+| `SavedRecipeGrid`    | Daftar resep disimpan | M3-04 |
+
+## 6. Admin (`src/features/admin/components`)
+
+| Komponen             | Tujuan               | Issue |
+| -------------------- | -------------------- | ----- |
+| `StatCard`           | Angka ringkasan      | M4-01 |
+| `DataTable`          | Tabel responsif      | M4-01 |
+| `TableToolbar`       | Search + filter      | M4-01 |
+| `StatusToggle`       | Aktif/non-aktif      | M4-02 |
+| `RowActions`         | Lihat/ubah/hapus     | M4-01 |
+| `UserDetailDrawer`   | Detail pengguna      | M4-01 |
 | `CategoryFormDialog` | Tambah/edit kategori | M4-02 |
-| `MessageList` | Daftar pesan | M4-03 |
-| `MessageDetail` | Isi pesan | M4-03 |
-| `AboutForm` | Edit konten tentang | M4-03 |
-| `TeamEditor` | CRUD anggota tim | M4-03 |
+| `MessageList`        | Daftar pesan         | M4-03 |
+| `MessageDetail`      | Isi pesan            | M4-03 |
+| `AboutForm`          | Edit konten tentang  | M4-03 |
+| `TeamEditor`         | CRUD anggota tim     | M4-03 |
 
-## 6. Umpan balik dan status
+## 7. Umpan balik dan status
 
-| Komponen | Tujuan | Issue |
-| --- | --- | --- |
-| `PageSkeleton` | Skeleton layout halaman | M1-03 |
-| `ErrorState` | Error dengan retry | M1-03 |
-| `NotFoundPage` | Halaman 404 | M1-05 |
-| `RouteErrorBoundary` | Penangkap error route | M1-05 |
-| `ProtectedRoute` | Guard login/role | M1-06 |
-| `DemoBadge` | Penanda data demo | M1-05 |
+| Komponen             | Tujuan                  | Issue |
+| -------------------- | ----------------------- | ----- |
+| `PageSkeleton`       | Skeleton layout halaman | M1-03 |
+| `ErrorState`         | Error dengan retry      | M1-03 |
+| `NotFoundPage`       | Halaman 404             | M1-05 |
+| `RouteErrorBoundary` | Penangkap error route   | M1-05 |
+| `ProtectedRoute`     | Guard login/role        | M1-06 |
+| `DemoBadge`          | Penanda data demo       | M1-05 |
 
-## 7. Aturan implementasi
+## 8. Aturan implementasi
 
 1. Jangan membuat komponen baru bila varian props cukup.
 2. Semua teks UI berbahasa Indonesia, tetapi nama props dan tipe berbahasa Inggris.
