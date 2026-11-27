@@ -79,6 +79,16 @@ Aturan: satu komponen = satu implementasi. Variasi memakai props, bukan file dup
 | `ContactPage` | Form kontak demo dengan validasi inline dan state sukses | M2-05 |
 | `validateContact` | Aturan validasi nama, email, subjek, pesan, persetujuan | M2-05 |
 
+### Autentikasi (`src/features/auth`)
+
+| Modul | Tujuan | Issue |
+| --- | --- | --- |
+| `LoginPage` | Form masuk, akun demo, dan returnTo aman | M3-01 |
+| `RegisterPage` | Form daftar dengan validasi dan konfirmasi | M3-01 |
+| `PasswordField` | Input kata sandi dengan tombol tampil/sembunyikan | M3-01 |
+| `DemoAccounts` | Kotak akun demo dengan isi otomatis | M3-01 |
+| `validateLogin`, `validateRegister` | Aturan validasi form autentikasi | M3-01 |
+
 ## 4. Akun dan kontribusi (`src/features/*/components`)
 
 | Komponen | Tujuan | Issue |
