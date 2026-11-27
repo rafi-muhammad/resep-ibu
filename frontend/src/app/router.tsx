@@ -9,7 +9,7 @@ import {
 } from '@/components/layout'
 import { NotFoundPage } from '@/pages/not-found-page'
 import { PlaceholderPage } from '@/pages/placeholder-page'
-import { ProtectedRoute } from '@/features/auth'
+import { LoginPage, ProtectedRoute, RegisterPage } from '@/features/auth'
 import { CategoriesIndexPage, CategoryDetailPage } from '@/features/categories'
 import { AboutPage, ContactPage } from '@/features/content'
 import { HomePage } from '@/features/home'
@@ -74,23 +74,11 @@ export const routes: RouteObject[] = [
         children: [
           {
             path: 'masuk',
-            element: (
-              <PlaceholderPage
-                eyebrow="Akun"
-                title="Masuk"
-                description="Formulir masuk akan tersedia pada issue autentikasi."
-              />
-            ),
+            element: <LoginPage />,
           },
           {
             path: 'daftar',
-            element: (
-              <PlaceholderPage
-                eyebrow="Akun"
-                title="Daftar akun"
-                description="Formulir pendaftaran akan tersedia pada issue autentikasi."
-              />
-            ),
+            element: <RegisterPage />,
           },
         ],
       },
